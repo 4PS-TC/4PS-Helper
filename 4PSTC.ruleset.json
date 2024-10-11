@@ -1,0 +1,176 @@
+{
+  "name": "4PS Custom Ruleset",
+  "description": "Description",
+  "rules": [
+    {
+      "id": "AA0005",
+      "action": "Info",
+      "justification": "ignore"
+    },
+    {
+      "id": "AA0008",
+      "action": "Hidden",
+      "justification": "ignore"
+    },
+    {
+      "id": "AA0021",
+      "action": "Hidden",
+      "justification": "ignore"
+    },
+    {
+      "id": "AA0073",
+      "action": "Info",
+      "justification": "ignore"
+    },
+    {
+      "id": "AA0074",
+      "action": "Info",
+      "justification": "ignore, by new code add suffix"
+    },
+    {
+      "id": "AA0137",
+      "action": "Info",
+      "justification": "ignore, by new code add tooltip"
+    },
+    {
+      "id": "AA0215",
+      "action": "None",
+      "justification": "ignore, file name for customization is company-specific agreed differently"
+    },
+    {
+      "id": "AA0204",
+      "action": "Info",
+      "justification": "ignore, prevent by new code: global variables the same name as fields, methods or actions in the same scope"
+    },
+    {
+      "id": "AA0206",
+      "action": "Info",
+      "justification": "ignore, prevent by new code: The value assigned to a variable must be used."
+    },
+    {
+      "id": "AA0218",
+      "action": "Info",
+      "justification": "ignore, by new code add tooltip"
+    },
+    {
+      "id": "AA0225",
+      "action": "Info",
+      "justification": "ignore, by new code add tooltip"
+    },
+    {
+      "id": "AA0470",
+      "action": "Info",
+      "justification": "ignore, by new code add tooltip"
+    },
+    {
+      "id": "AL0254",
+      "action": "Info",
+      "justification": "ignore"
+    },
+    {
+      "id": "AL0999",
+      "action": "Info",
+      "justification": "ignore, for ConstructNL total app"
+    },
+    {
+      "id": "AS0051",
+      "action": "Info",
+      "justification": "ignore, manifest UELA not filled"
+    },
+    {
+      "id": "AS0053",
+      "action": "Info",
+      "justification": "ignore, the codecop doesn't look rigth to the version of BC"
+    },
+    {
+      "id": "AS0054",
+      "action": "Info",
+      "justification": "ignore, the codecop doesn't look rigth to the version of BC"
+    },
+    {
+      "id": "AS0084",
+      "action": "Hidden",
+      "justification": "ignore, id range for customer customizations in range 50000..99999"
+    },
+    {
+      "id": "AS0085",
+      "action": "Hidden",
+      "justification": "ignore, application property 4PS is Base Application"
+    },
+    {
+      "id": "AS0092",
+      "action": "Info",
+      "justification": "ignore"
+    },
+    {
+      "id": "LC0001",
+      "action": "Warning",
+      "justification": "Fix it by setting the visible property to false"
+    },
+    {
+      "id": "LC0002",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0003",
+      "action": "Error",
+      "justification": "Do not use an Object ID for properties or variable declarations."
+    },
+    {
+      "id": "LC0005",
+      "action": "Error",
+      "justification": "The casing of variable/method usage must align with the definition."
+    },
+    {
+      "id": "LC0010",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0012",
+      "action": "Error",
+      "justification": "Using hardcoded IDs in functions like Codeunit.Run() is not allowed."
+    },
+    {
+      "id": "LC0022",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0023",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0040",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0046",
+      "action": "None",
+      "justification": "ignore, can't solve it"
+    },
+    {
+      "id": "LC0047",
+      "action": "None",
+      "justification": "ignore, don't know what \"Tok\" is"
+    },
+    {
+      "id": "LC0048",
+      "action": "None",
+      "justification": "ignore, don't know what \"Tok\" is"
+    },
+    {
+      "id": "LC0053",
+      "action": "None",
+      "justification": "Look into this later"
+    },
+    {
+      "id": "PTE0005",
+      "action": "Info",
+      "justification": "To keep codeCop PTE always on."
+    }
+  ]
+}
