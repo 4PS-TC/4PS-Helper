@@ -28,28 +28,82 @@
         "name": "Codeunit \"Document-Print\";",
         "type": "problem",
         "regex": {
-          "pattern": "(\\w+)\\s*: [C|c]odeunit \"Document-Print\";",
-          "flags": "g"
+          "pattern": "^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";",
+          "flags": "gm"
         },
-        "replacement": "$1: Codeunit \"Document-Print 4PS\";\nReportSelections: Record \"Report Selections\";"
+        "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"
       },
       {
         "name": "Codeunit \"Document-Print\" - PrintBlanketScheme",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\);\\s*$",
+          "pattern": "^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\)",
           "flags": "gm"
         },
-        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2);"
+        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
       },
       {
         "name": "Codeunit \"Document-Print\" - GetReportSelectionForEmailAttachmentUsage",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\((.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);\\s*$",
+          "pattern": "^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
           "flags": "gm"
         },
-        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2);"
+        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - SaveSOAppointmentLettersAsExternalDocuments",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintPlantInventoryCourse",
+        "type": "problem",
+        "regex": {
+          "pattern": "^\\s*(?:.+).PrintPlantInventoryCourse\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServContract",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintServContract\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServOrder",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintServOrder\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServOrderTexts",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintServOrderTexts\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintSurvey",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintSurvey\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
       },
       {
         "name": "Codeunit NoSeriesManagement;",
