@@ -143,6 +143,16 @@
       "justification": "ignore, can't solve it"
     },
     {
+      "id": "LC0036",
+      "action": "None",
+      "justification": "I want to start tooltipes with sometine else then Specifies"
+    },
+    {
+      "id": "LC0038",
+      "action": "Info",
+      "justification": "Length of Tooltip"
+    },
+    {
       "id": "LC0040",
       "action": "None",
       "justification": "ignore, can't solve it"
@@ -166,6 +176,16 @@
       "id": "LC0053",
       "action": "None",
       "justification": "Look into this later"
+    },
+    {
+      "id": "LC0068",
+      "action": "None",
+      "justification": "To activate later"
+    },
+    {
+      "id": "LC0069",
+      "action": "None",
+      "justification": "To activate later"
     },
     {
       "id": "PTE0005",
