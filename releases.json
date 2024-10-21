@@ -16,6 +16,15 @@
     },
     "fixes": [
       {
+        "name": "Codeunit \"Document-Mailing\"",
+        "type": "problem",
+        "regex": {
+          "pattern": "[C|c]odeunit \"Document-Mailing\"",
+          "flags": "g"
+        },
+        "replacement": "Codeunit \"Document Mailing\""
+      },
+      {
         "name": "Codeunit \"Document-Print\";",
         "type": "problem",
         "regex": {
