@@ -112,7 +112,7 @@
           "pattern": "^(\\s*)(column\\((?:.+);\\s*(?:.+)\\.\"Home Page\"\\)\\s*{[.\\s]*})",
           "flags": "gm"
         },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2\n#pragma warning restore AL0432\n#endif"
+        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2\n#pragma warning restore AL0432\n#endif"
       },
       {
         "name": "Conversion XMLPort 4PS",
