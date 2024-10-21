@@ -549,33 +549,6 @@
           "flags": "g"
         },
         "replacement": ""
-      },
-      {
-        "name": "Language codeunit 1",
-        "type": "warning",
-        "regex": {
-          "pattern": " Language: Codeunit Language;",
-          "flags": "g"
-        },
-        "replacement": " CodLanguage: Codeunit Language;"
-      },
-      {
-        "name": "Language codeunit 2",
-        "type": "warning",
-        "regex": {
-          "pattern": " Language.GetLanguageIdOrDefault\\(",
-          "flags": "g"
-        },
-        "replacement": " CodLanguage.GetLanguageIdOrDefault("
-      },
-      {
-        "name": "Language codeunit 2 alt",
-        "type": "warning",
-        "regex": {
-          "pattern": " Language.GetLanguageID\\(",
-          "flags": "g"
-        },
-        "replacement": " CodLanguage.GetLanguageID("
       }
     ]
   },
