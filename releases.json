@@ -163,19 +163,10 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(column\\((?:.+);\\s*(?:.+)\\.\"Home Page\"\\)\\s*{[.\\s]*})",
-          "flags": "gm"
-        },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2\n#pragma warning restore AL0432\n#endif"
-      },
-      {
-        "name": "Home Page",
-        "type": "problem",
-        "regex": {
           "pattern": "^(\\s*)(.+)(\\.\"Home Page\")(.+)",
           "flags": "gm"
         },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
       },
       {
         "name": "Conversion XMLPort 4PS",
@@ -227,6 +218,33 @@
             "version": "1.0.0.0"
           }
         ]
+      },
+      {
+        "name": "Fix duplicate pragma's - Start",
+        "type": "problem",
+        "regex": {
+          "pattern": "(#if not CLEAN24\\s*#pragma warning disable AL0432\\s*){2,}",
+          "flags": "gm"
+        },
+        "replacement": "$1\n"
+      },
+      {
+        "name": "Fix duplicate pragma's - End",
+        "type": "problem",
+        "regex": {
+          "pattern": "(#pragma warning restore AL0432\\s*#endif\\s*){2,}",
+          "flags": "gm"
+        },
+        "replacement": "$1"
+      },
+      {
+        "name": "Fix duplicate pragma's - End",
+        "type": "problem",
+        "regex": {
+          "pattern": "(#pragma warning disable AL0432)\\n\\s*\\n+",
+          "flags": "gm"
+        },
+        "replacement": "$1\n"
       }
     ]
   },
