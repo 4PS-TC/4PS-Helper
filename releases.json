@@ -172,7 +172,7 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^^(\\s*)(.+)(\\.\"Home Page\")(.+)",
+          "pattern": "^(\\s*)(.+)(\\.\"Home Page\")(.+)",
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4\n#pragma warning restore AL0432\n#endif"
