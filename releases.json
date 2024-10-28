@@ -187,7 +187,7 @@
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
       },
       {
-        "name": "Prognosis End Result Report W1",
+        "name": "Prognosis End Result Report",
         "type": "problem",
         "regex": {
           "pattern": "^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$",
@@ -284,6 +284,40 @@
           {
             "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
             "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Barcode Scanning",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"Barcode Hour Accounting Setup\"",
+          "flags": "g"
+        },
+        "replacement": "\"HRH Barcode Hr. Acc. Setup 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Barcode Scanning W1",
+            "id": "78cda4d1-ef38-433a-a0fd-f5d32daf889a",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Barcode Scanning",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"Barcode Hour Accounting\"",
+          "flags": "g"
+        },
+        "replacement": "\"HRH Barcode Hour Acc. 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Barcode Scanning W1",
+            "id": "78cda4d1-ef38-433a-a0fd-f5d32daf889a",
             "publisher": "4PS B.V.",
             "version": "1.0.0.0"
           }
