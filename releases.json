@@ -1,875 +1,875 @@
 {
-	  "24.44": {
-    "versionMeta": {
-      "release": "24.44",
-      "major": "24",
-      "minor": "4",
-      "season": "4",
-      "platform": "24.0.0.0",
-      "application": "24.0.0.0",
-      "runtime": "13.0"
-    },
-    "dates": {
-      "releaseCandidate": "2024-11-28T00:00:00.000Z",
-      "generalAvailability": "2024-11-28T00:00:00.000Z",
-      "releaseDate": "2024-10-14T00:00:00.000Z"
-    },
-    "fixes": [
-      {
-        "name": "Codeunit \"Document-Mailing\"",
-        "type": "problem",
-        "regex": {
-          "pattern": "[C|c]odeunit \"Document-Mailing\"",
-          "flags": "g"
-        },
-        "replacement": "Codeunit \"Document Mailing\""
-      },
-      {
-        "name": "Codeunit \"Document-Print\";",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";",
-          "flags": "gm"
-        },
-        "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintBlanketScheme",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - GetReportSelectionForEmailAttachmentUsage",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - SaveSOAppointmentLettersAsExternalDocuments",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintPlantInventoryCourse",
-        "type": "problem",
-        "regex": {
-          "pattern": "^\\s*(?:.+).PrintPlantInventoryCourse\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintServContract",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintServContract\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintServOrder",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintServOrder\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintServOrderTexts",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintServOrderTexts\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
-      },
-      {
-        "name": "Codeunit \"Document-Print\" - PrintSurvey",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(?:.+).PrintSurvey\\((.+)\\)",
-          "flags": "gm"
-        },
-        "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
-      },
-      {
-        "name": "Codeunit NoSeriesManagement;",
-        "type": "problem",
-        "regex": {
-          "pattern": "[C|c]odeunit NoSeriesManagement;",
-          "flags": "g"
-        },
-        "replacement": "Codeunit \"No. Series\";"
-      },
-      {
-        "name": "NoSeriesManagement SetNoSeriesLineFilter",
-        "type": "problem",
-        "regex": {
-          "pattern": "\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);",
-          "flags": "g"
-        },
-        "replacement": ".GetNoSeriesLine($1, $2, $3, false);"
-      },
-      {
-        "name": "NoSeriesManagement SetSeries",
-        "type": "problem",
-        "regex": {
-          "pattern": "\\.SetSeries\\((.+)\\)",
-          "flags": "g"
-        },
-        "replacement": ".GetNextNo($1)"
-      },
-      {
-        "name": "NoSeriesManagement SelectSeries",
-        "type": "problem",
-        "regex": {
-          "pattern": "\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)",
-          "flags": "g"
-        },
-        "replacement": ".LookupRelatedNoSeries($2, $1, $3)"
-      },
-      {
-        "name": "NoSeriesManagement InitSeries if else",
-        "type": "problem",
-        "regex": {
-          "pattern": "(then|else)\\s*(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\)",
-          "flags": "g"
-        },
-        "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
-      },
-      {
-        "name": "NoSeriesManagement InitSeries (no comments)",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
-          "flags": "g"
-        },
-        "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
-      },
-      {
-        "name": "NoSeriesManagement InitSeries (in comments)",
-        "type": "problem",
-        "regex": {
-          "pattern": "DISABLED      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
-          "flags": "g"
-        },
-        "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
-      },
-      {
-        "name": "Home Page",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(.+)(\\.\"Home Page\")(.+)",
-          "flags": "gm"
-        },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
-      },
-      {
-        "name": "Home Page",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(.+)(\\.FieldName\\(\"Home Page\"\\))(.+)",
-          "flags": "gm"
-        },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
-      },
-      {
-        "name": "Prognosis End Result Report W1",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$",
-          "flags": "gm"
-        },
-        "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
-      },
-      {
-        "name": "Conversion XMLPort 4PS & Conversion File Format",
-        "type": "problem",
-        "regex": {
-          "pattern": "^(\\s*)(.+)(Record \"(?:Conversion XMLPort 4PS|Conversion File Format)\";)",
-          "flags": "gm"
-        },
-        "replacement": "#if not FPS_IMC_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
-      },
-      {
-        "name": "E-plan",
-        "type": "problem",
-        "regex": {
-          "pattern": "::\"E-Plan\"",
-          "flags": "g"
-        },
-        "replacement": "::\"E-Plan\"",
-        "appDependencies": [
-          {
-            "name": "4PS Interface E Plan W1",
-            "id": "27dc84c3-bb5d-4f92-9125-8bbac23a5356",
-            "publisher": "4PS B.V.",
-            "version": "1.0.0.0"
-          }
-        ]
-      },
-      {
-        "name": "Fix duplicate pragma's - Start",
-        "type": "problem",
-        "regex": {
-          "pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
-          "flags": "gm"
-        },
-        "replacement": "$1\n"
-      },
-      {
-        "name": "Fix duplicate pragma's - End",
-        "type": "problem",
-        "regex": {
-          "pattern": "(#pragma warning restore AL0432\\s*#endif\\s*){2,}",
-          "flags": "gm"
-        },
-        "replacement": "$1"
-      },
-      {
-        "name": "Fix duplicate pragma's - End",
-        "type": "problem",
-        "regex": {
-          "pattern": "(#pragma warning disable AL0432)\\n\\s*\\n+",
-          "flags": "gm"
-        },
-        "replacement": "$1\n"
-      }
-    ]
-  },
-  "23.51": {
-    "versionMeta": {
-      "release": "23.51",
-      "major": "23",
-      "minor": "5",
-      "season": "1",
-      "platform": "23.0.0.0",
-      "application": "23.0.0.0",
-      "runtime": "12.0"
-    },
-    "dates": {
-      "releaseCandidate": "2024-03-18T00:00:00.000Z",
-      "generalAvailability": "2024-03-18T00:00:00.000Z",
-      "releaseDate": "2024-05-02T00:00:00.000Z"
-    },
-    "fixes": []
-  },
-  "23.34": {
-    "versionMeta": {
-      "release": "23.34",
-      "major": "23",
-      "minor": "3",
-      "season": "4",
-      "platform": "23.0.0.0",
-      "application": "23.0.0.0",
-      "runtime": "12.0"
-    },
-    "dates": {
-      "releaseCandidate": "2024-03-18T00:00:00.000Z",
-      "generalAvailability": "2024-03-18T00:00:00.000Z",
-      "releaseDate": "2024-05-02T00:00:00.000Z"
-    },
-    "fixes": []
-  },
-  "22.22": {
-    "versionMeta": {
-      "release": "22.22",
-      "major": "22",
-      "minor": "2",
-      "season": "2",
-      "platform": "22.0.0.0",
-      "application": "22.0.0.0",
-      "runtime": "11.0"
-    },
-    "dates": {
-      "releaseCandidate": "2023-07-21T00:00:00.000Z",
-      "generalAvailability": "2023-08-25T00:00:00.000Z",
-      "releaseDate": "2023-10-05T00:00:00.000Z"
-    },
-    "fixes": [
-      {
-        "name": "EstimateLineTotal.DetermineSurchRcpLine",
-        "type": "problem",
-        "regex": {
-          "pattern": "EstimateLineTotal\\.DetermineSurchRcpLine.+?, SummarySheet\\);",
-          "flags": "g"
-        },
-        "replacement": "EstimateLineTotal.DetermineSurchRcpLine(\"Estimate Recipe Line\", SummarySheet, PrintTotalsBasedOn);"
-      },
-      {
-        "name": "EstimateLineTotal.SummaryLineInFilter",
-        "type": "problem",
-        "regex": {
-          "pattern": "EstimateLineTotal\\.SummaryLineInFilter\\(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\"\\.Amount, \"Summary Sheet Line\"\\.Hours, TotSurchargeAmount, TotSurchargeHours\\);",
-          "flags": "g"
-        },
-        "replacement": "EstimateLineTotal.SummaryLineInFilter(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\".Amount, \"Summary Sheet Line\".Hours, \"Summary Sheet Line\".\"Summary Line Type\".AsInteger(), TotSurchargeAmount, TotSurchargeHours);"
-      },
-      {
-        "name": "Page::Summary Sheet List",
-        "type": "problem",
-        "regex": {
-          "pattern": "Page::\"Summary Sheet List\"",
-          "flags": "g"
-        },
-        "replacement": "Page::\"Summary Sheets\""
-      },
-      {
-        "name": "Page::Summary Sheet List",
-        "type": "problem",
-        "regex": {
-          "pattern": "PAGE::\"Summary Sheet List\"",
-          "flags": "g"
-        },
-        "replacement": "Page::\"Summary Sheets\""
-      },
-      {
-        "name": "LookupBuyFromVendor4PS",
-        "type": "problem",
-        "regex": {
-          "pattern": "Rec\\.LookupBuyFromVendor4PS\\(xRec\\)",
-          "flags": "g"
-        },
-        "replacement": "Rec.LookupBuyFromVendor4PS(xRec, Rec.\"Buy-from Vendor Name\")"
-      },
-      {
-        "name": "FindSet",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "\\.FindSet\\((true|false), (true|false)\\)",
-          "flags": "g"
-        },
-        "replacement": ".FindSet($1)"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(0\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\" \")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(1\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Qte.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(2\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Blnkt. Ord\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(3\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Ord. Cnfrmn.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(4\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Inv.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(5\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Shpt. Note\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(6\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Cr. Memo\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(7\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Stmnt.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(8\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Rmdr.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(9\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Create\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(10\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Post\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(11\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch.Qte.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(12\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Blnkt. Ord.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(13\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Ord.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(14\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Inv.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(15\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Rcpt.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(16\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Cr. Memo\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(17\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Cover Sheet\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(18\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Order\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(19\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Finance Charge Memo\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(20\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Receipt\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(21\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Shipment\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(22\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Ord. Cnfrmn.\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(23\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(24\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract Quote\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(25\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Quote\")"
-      },
-      {
-        "name": "FindInteractTmplCode",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "FindInteractTmplCode\\(26\\)",
-          "flags": "g"
-        },
-        "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Draft Invoice\")"
-      },
-      {
-        "name": "Cross-Reference No.",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.\"Cross-Reference No.\"\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.\"Item Reference No.\")"
-      },
-      {
-        "name": "Unit of Measure (Cross Ref.)",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.\"Unit of Measure \\(Cross Ref.\\)\"\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.\"Item Reference Unit of Measure\")"
-      },
-      {
-        "name": "Cross-Reference Type",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.\"Cross-Reference Type\"\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.\"Item Reference Type\")"
-      },
-      {
-        "name": "Cross-Reference Type No.",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.\"Cross-Reference Type No.\"\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.\"Item Reference Type No.\")"
-      },
-      {
-        "name": "System ID",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.Id\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.SystemId)"
-      },
-      {
-        "name": "Coupled to CRM",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "; Rec\\.\"Coupled to CRM\"\\)",
-          "flags": "g"
-        },
-        "replacement": "; Rec.\"Coupled to Dataverse\")"
-      },
-      {
-        "name": "InDataset removal",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "\\[InDataSet\\][\\r\\n\\s]+",
-          "flags": "g"
-        },
-        "replacement": ""
-      }
-    ]
-  },
-  "21.41": {
-    "versionMeta": {
-      "release": "21.41",
-      "major": "21",
-      "minor": "4",
-      "season": "1",
-      "platform": "21.0.0.0",
-      "application": "21.0.0.0",
-      "runtime": "10.0"
-    },
-    "dates": {
-      "releaseCandidate": "2000-01-01T00:00:00.000Z",
-      "generalAvailability": "2000-01-01T00:00:00.000Z",
-      "releaseDate": "2000-01-01T00:00:00.000Z"
-    },
-    "fixes": []
-  },
-  "21.24": {
-    "versionMeta": {
-      "release": "21.24",
-      "major": "21",
-      "minor": "2",
-      "season": "4",
-      "platform": "21.0.0.0",
-      "application": "21.0.0.0",
-      "runtime": "10.0"
-    },
-    "dates": {
-      "releaseCandidate": "2000-01-01T00:00:00.000Z",
-      "generalAvailability": "2000-01-01T00:00:00.000Z",
-      "releaseDate": "2000-01-01T00:00:00.000Z"
-    },
-    "fixes": []
-  },
-  "20.12": {
-    "versionMeta": {
-      "release": "20.12",
-      "major": "20",
-      "minor": "1",
-      "season": "2",
-      "platform": "23.0.0.0",
-      "application": "23.0.0.0",
-      "runtime": "9.1"
-    },
-    "dates": {
-      "releaseCandidate": "2024-03-18T00:00:00.000Z",
-      "generalAvailability": "2024-03-18T00:00:00.000Z",
-      "releaseDate": "2024-05-02T00:00:00.000Z"
-    },
-    "fixes": []
-  },
-  "NAVtoBCMigration": {
-    "versionMeta": {
-      "release": "NAV to BC migration",
-      "major": "0",
-      "minor": "0",
-      "season": "0",
-      "platform": "0.0.0.0",
-      "application": "0.0.0.0",
-      "runtime": "0.0"
-    },
-    "dates": {
-      "releaseCandidate": "2020-01-01T00:00:00.000Z",
-      "generalAvailability": "2020-01-01T00:00:00.000Z",
-      "releaseDate": "2020-01-01T00:00:00.000Z"
-    },
-    "fixes": [
-      {
-        "name": "ApplyLastCalcSurchFactor",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "EstimateLineTotal\\.CalculateOfferPrice\\(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn\\);",
-          "flags": "g"
-        },
-        "replacement": "EstimateLineTotal.CalculateOfferPrice(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn, ApplyLastCalcSurchFactor);"
-      },
-      {
-        "name": "RecordLanguageToCodeunit_Variable",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "Language: Record Language;",
-          "flags": "g"
-        },
-        "replacement": "Language: Codeunit Language;"
-      },
-      {
-        "name": "RecordLanguageToCodeunit-Code",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "CurrReport\\.Language := Language\\.GetLanguageID\\(\"Language Code\"\\);",
-          "flags": "g"
-        },
-        "replacement": "CurrReport.Language := Language.GetLanguageIdOrDefault(\"Language Code\");"
-      },
-      {
-        "name": "JobAdrestoBillTo-Adress",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "[Jj]ob[Rr]ec\\.Address",
-          "flags": "g"
-        },
-        "replacement": "JobRec.\"Bill-to Address\""
-      },
-      {
-        "name": "DetermineBothDates (Single Project)",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "DetermineProgressDate\\.DetermineBothDates\\(Job\\);",
-          "flags": "g"
-        },
-        "replacement": "DetermineProgressDate.DetermineBothDates(Job,true);"
-      },
-      {
-        "name": "DetermineBothDates (Single Project)",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "SearchProgrDate\\.DetermineDate\\(Job\\);",
-          "flags": "g"
-        },
-        "replacement": "SearchProgrDate.DetermineDate(Job,true);"
-      },
-      {
-        "name": "Employee Picture to Image",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "EmployeeRec\\.Picture",
-          "flags": "g"
-        },
-        "replacement": "EmployeeRec.Image"
-      },
-      {
-        "name": "Employee Picture to Image",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "EmployeeRec\\.CalcFields\\(Picture\\)",
-          "flags": "g"
-        },
-        "replacement": "EmployeeRec.CalcFields(Image)"
-      },
-      {
-        "name": "Archive Quotes and Orders To Archive Orders",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "\"Archive Quotes and Orders\"",
-          "flags": "g"
-        },
-        "replacement": "\"Archive Orders\""
-      },
-      {
-        "name": "BuildInvLineBuffer2 > BuildInvLineBuffer",
-        "type": "deprecation",
-        "regex": {
-          "pattern": "BuildInvLineBuffer2",
-          "flags": "g"
-        },
-        "replacement": "BuildInvLineBuffer"
-      },
-      {
-        "name": "CurrReport.PageNo",
-        "type": "warning",
-        "regex": {
-          "pattern": "CurrReport\\.PageNo := 1;",
-          "flags": "g"
-        },
-        "replacement": ""
-      },
-      {
-        "name": "Faulty translation",
-        "type": "warning",
-        "regex": {},
-        "replacement": "Handtekening"
-      },
-      {
-        "name": "CurrReport.PageNo",
-        "type": "warning",
-        "regex": {
-          "pattern": "StrSubstNo\\(Text005, Format\\(CurrReport.PageNo\\)\\)",
-          "flags": "g"
-        },
-        "replacement": "''"
-      },
-      {
-        "name": "CurrReport.CreateTotals",
-        "type": "warning",
-        "regex": {
-          "pattern": "CurrReport.CreateTotals\\(.{0,250}\\);",
-          "flags": "g"
-        },
-        "replacement": ""
-      },
-      {
-        "name": "Enum PeriodType",
-        "type": "warning",
-        "regex": {
-          "pattern": "PeriodType: Option Day,Week,Month,Quarter,Year,\"Accounting Period\";",
-          "flags": "g"
-        },
-        "replacement": "PeriodType: Enum \"Analysis Period Type\";"
-      },
-      {
-        "name": "Actual Reference Point",
-        "type": "warning",
-        "regex": {
-          "pattern": "\"Actual Reference Point\"",
-          "flags": "g"
-        },
-        "replacement": "\"Actual Reference Point (Gantt)\""
-      }
-    ]
-  }
+	"24.44": {
+		"versionMeta": {
+			"release": "24.44",
+			"major": "24",
+			"minor": "4",
+			"season": "4",
+			"platform": "24.0.0.0",
+			"application": "24.0.0.0",
+			"runtime": "13.0"
+		},
+		"dates": {
+			"releaseCandidate": "2024-11-28T00:00:00.000Z",
+			"generalAvailability": "2024-11-28T00:00:00.000Z",
+			"releaseDate": "2024-10-14T00:00:00.000Z"
+		},
+		"fixes": [
+			{
+				"name": "Codeunit \"Document-Mailing\"",
+				"type": "problem",
+				"regex": {
+					"pattern": "[C|c]odeunit \"Document-Mailing\"",
+					"flags": "g"
+				},
+				"replacement": "Codeunit \"Document Mailing\""
+			},
+			{
+				"name": "Codeunit \"Document-Print\";",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";",
+					"flags": "gm"
+				},
+				"replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintBlanketScheme",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - GetReportSelectionForEmailAttachmentUsage",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - SaveSOAppointmentLettersAsExternalDocuments",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintPlantInventoryCourse",
+				"type": "problem",
+				"regex": {
+					"pattern": "^\\s*(?:.+).PrintPlantInventoryCourse\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintServContract",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).PrintServContract\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintServOrder",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).PrintServOrder\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintServOrderTexts",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).PrintServOrderTexts\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+			},
+			{
+				"name": "Codeunit \"Document-Print\" - PrintSurvey",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(?:.+).PrintSurvey\\((.+)\\)",
+					"flags": "gm"
+				},
+				"replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+			},
+			{
+				"name": "Codeunit NoSeriesManagement;",
+				"type": "problem",
+				"regex": {
+					"pattern": "[C|c]odeunit NoSeriesManagement;",
+					"flags": "g"
+				},
+				"replacement": "Codeunit \"No. Series\";"
+			},
+			{
+				"name": "NoSeriesManagement SetNoSeriesLineFilter",
+				"type": "problem",
+				"regex": {
+					"pattern": "\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);",
+					"flags": "g"
+				},
+				"replacement": ".GetNoSeriesLine($1, $2, $3, false);"
+			},
+			{
+				"name": "NoSeriesManagement SetSeries",
+				"type": "problem",
+				"regex": {
+					"pattern": "\\.SetSeries\\((.+)\\)",
+					"flags": "g"
+				},
+				"replacement": ".GetNextNo($1)"
+			},
+			{
+				"name": "NoSeriesManagement SelectSeries",
+				"type": "problem",
+				"regex": {
+					"pattern": "\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)",
+					"flags": "g"
+				},
+				"replacement": ".LookupRelatedNoSeries($2, $1, $3)"
+			},
+			{
+				"name": "NoSeriesManagement InitSeries if else",
+				"type": "problem",
+				"regex": {
+					"pattern": "(then|else)\\s*(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\)",
+					"flags": "g"
+				},
+				"replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
+			},
+			{
+				"name": "NoSeriesManagement InitSeries (no comments)",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
+					"flags": "g"
+				},
+				"replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
+			},
+			{
+				"name": "NoSeriesManagement InitSeries (in comments)",
+				"type": "problem",
+				"regex": {
+					"pattern": "DISABLED      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
+					"flags": "g"
+				},
+				"replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
+			},
+			{
+				"name": "Home Page",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(.+)(\\.\"Home Page\")(.+)",
+					"flags": "gm"
+				},
+				"replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+			},
+			{
+				"name": "Home Page",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(.+)(\\.FieldName\\(\"Home Page\"\\))(.+)",
+					"flags": "gm"
+				},
+				"replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+			},
+			{
+				"name": "Prognosis End Result Report W1",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$",
+					"flags": "gm"
+				},
+				"replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+			},
+			{
+				"name": "Conversion XMLPort 4PS & Conversion File Format",
+				"type": "problem",
+				"regex": {
+					"pattern": "^(\\s*)(.+)(Record \"(?:Conversion XMLPort 4PS|Conversion File Format)\";)",
+					"flags": "gm"
+				},
+				"replacement": "#if not FPS_IMC_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
+			},
+			{
+				"name": "E-plan",
+				"type": "problem",
+				"regex": {
+					"pattern": "::\"E-Plan\"",
+					"flags": "g"
+				},
+				"replacement": "::\"E-Plan\"",
+				"appDependencies": [
+					{
+						"name": "4PS Interface E Plan W1",
+						"id": "27dc84c3-bb5d-4f92-9125-8bbac23a5356",
+						"publisher": "4PS B.V.",
+						"version": "1.0.0.0"
+					}
+				]
+			},
+			{
+				"name": "Fix duplicate pragma's - Start",
+				"type": "problem",
+				"regex": {
+					"pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
+					"flags": "gm"
+				},
+				"replacement": "$1\n"
+			},
+			{
+				"name": "Fix duplicate pragma's - End",
+				"type": "problem",
+				"regex": {
+					"pattern": "(#pragma warning restore AL0432\\s*#endif\\s*){2,}",
+					"flags": "gm"
+				},
+				"replacement": "$1"
+			},
+			{
+				"name": "Fix duplicate pragma's - End",
+				"type": "problem",
+				"regex": {
+					"pattern": "(#pragma warning disable AL0432)\\n\\s*\\n+",
+					"flags": "gm"
+				},
+				"replacement": "$1\n"
+			}
+		]
+	},
+	"23.51": {
+		"versionMeta": {
+			"release": "23.51",
+			"major": "23",
+			"minor": "5",
+			"season": "1",
+			"platform": "23.0.0.0",
+			"application": "23.0.0.0",
+			"runtime": "12.0"
+		},
+		"dates": {
+			"releaseCandidate": "2024-03-18T00:00:00.000Z",
+			"generalAvailability": "2024-03-18T00:00:00.000Z",
+			"releaseDate": "2024-05-02T00:00:00.000Z"
+		},
+		"fixes": []
+	},
+	"23.34": {
+		"versionMeta": {
+			"release": "23.34",
+			"major": "23",
+			"minor": "3",
+			"season": "4",
+			"platform": "23.0.0.0",
+			"application": "23.0.0.0",
+			"runtime": "12.0"
+		},
+		"dates": {
+			"releaseCandidate": "2024-03-18T00:00:00.000Z",
+			"generalAvailability": "2024-03-18T00:00:00.000Z",
+			"releaseDate": "2024-05-02T00:00:00.000Z"
+		},
+		"fixes": []
+	},
+	"22.22": {
+		"versionMeta": {
+			"release": "22.22",
+			"major": "22",
+			"minor": "2",
+			"season": "2",
+			"platform": "22.0.0.0",
+			"application": "22.0.0.0",
+			"runtime": "11.0"
+		},
+		"dates": {
+			"releaseCandidate": "2023-07-21T00:00:00.000Z",
+			"generalAvailability": "2023-08-25T00:00:00.000Z",
+			"releaseDate": "2023-10-05T00:00:00.000Z"
+		},
+		"fixes": [
+			{
+				"name": "EstimateLineTotal.DetermineSurchRcpLine",
+				"type": "problem",
+				"regex": {
+					"pattern": "EstimateLineTotal\\.DetermineSurchRcpLine.+?, SummarySheet\\);",
+					"flags": "g"
+				},
+				"replacement": "EstimateLineTotal.DetermineSurchRcpLine(\"Estimate Recipe Line\", SummarySheet, PrintTotalsBasedOn);"
+			},
+			{
+				"name": "EstimateLineTotal.SummaryLineInFilter",
+				"type": "problem",
+				"regex": {
+					"pattern": "EstimateLineTotal\\.SummaryLineInFilter\\(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\"\\.Amount, \"Summary Sheet Line\"\\.Hours, TotSurchargeAmount, TotSurchargeHours\\);",
+					"flags": "g"
+				},
+				"replacement": "EstimateLineTotal.SummaryLineInFilter(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\".Amount, \"Summary Sheet Line\".Hours, \"Summary Sheet Line\".\"Summary Line Type\".AsInteger(), TotSurchargeAmount, TotSurchargeHours);"
+			},
+			{
+				"name": "Page::Summary Sheet List",
+				"type": "problem",
+				"regex": {
+					"pattern": "Page::\"Summary Sheet List\"",
+					"flags": "g"
+				},
+				"replacement": "Page::\"Summary Sheets\""
+			},
+			{
+				"name": "Page::Summary Sheet List",
+				"type": "problem",
+				"regex": {
+					"pattern": "PAGE::\"Summary Sheet List\"",
+					"flags": "g"
+				},
+				"replacement": "Page::\"Summary Sheets\""
+			},
+			{
+				"name": "LookupBuyFromVendor4PS",
+				"type": "problem",
+				"regex": {
+					"pattern": "Rec\\.LookupBuyFromVendor4PS\\(xRec\\)",
+					"flags": "g"
+				},
+				"replacement": "Rec.LookupBuyFromVendor4PS(xRec, Rec.\"Buy-from Vendor Name\")"
+			},
+			{
+				"name": "FindSet",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "\\.FindSet\\((true|false), (true|false)\\)",
+					"flags": "g"
+				},
+				"replacement": ".FindSet($1)"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(0\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\" \")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(1\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Qte.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(2\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Blnkt. Ord\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(3\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Ord. Cnfrmn.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(4\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Inv.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(5\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Shpt. Note\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(6\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Cr. Memo\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(7\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Stmnt.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(8\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Rmdr.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(9\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Create\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(10\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Post\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(11\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch.Qte.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(12\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Blnkt. Ord.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(13\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Ord.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(14\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Inv.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(15\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Rcpt.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(16\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Cr. Memo\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(17\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Cover Sheet\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(18\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Order\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(19\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Finance Charge Memo\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(20\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Receipt\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(21\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Shipment\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(22\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Ord. Cnfrmn.\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(23\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(24\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract Quote\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(25\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Quote\")"
+			},
+			{
+				"name": "FindInteractTmplCode",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "FindInteractTmplCode\\(26\\)",
+					"flags": "g"
+				},
+				"replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Draft Invoice\")"
+			},
+			{
+				"name": "Cross-Reference No.",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.\"Cross-Reference No.\"\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.\"Item Reference No.\")"
+			},
+			{
+				"name": "Unit of Measure (Cross Ref.)",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.\"Unit of Measure \\(Cross Ref.\\)\"\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.\"Item Reference Unit of Measure\")"
+			},
+			{
+				"name": "Cross-Reference Type",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.\"Cross-Reference Type\"\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.\"Item Reference Type\")"
+			},
+			{
+				"name": "Cross-Reference Type No.",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.\"Cross-Reference Type No.\"\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.\"Item Reference Type No.\")"
+			},
+			{
+				"name": "System ID",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.Id\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.SystemId)"
+			},
+			{
+				"name": "Coupled to CRM",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "; Rec\\.\"Coupled to CRM\"\\)",
+					"flags": "g"
+				},
+				"replacement": "; Rec.\"Coupled to Dataverse\")"
+			},
+			{
+				"name": "InDataset removal",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "\\[InDataSet\\][\\r\\n\\s]+",
+					"flags": "g"
+				},
+				"replacement": ""
+			}
+		]
+	},
+	"21.41": {
+		"versionMeta": {
+			"release": "21.41",
+			"major": "21",
+			"minor": "4",
+			"season": "1",
+			"platform": "21.0.0.0",
+			"application": "21.0.0.0",
+			"runtime": "10.0"
+		},
+		"dates": {
+			"releaseCandidate": "2000-01-01T00:00:00.000Z",
+			"generalAvailability": "2000-01-01T00:00:00.000Z",
+			"releaseDate": "2000-01-01T00:00:00.000Z"
+		},
+		"fixes": []
+	},
+	"21.24": {
+		"versionMeta": {
+			"release": "21.24",
+			"major": "21",
+			"minor": "2",
+			"season": "4",
+			"platform": "21.0.0.0",
+			"application": "21.0.0.0",
+			"runtime": "10.0"
+		},
+		"dates": {
+			"releaseCandidate": "2000-01-01T00:00:00.000Z",
+			"generalAvailability": "2000-01-01T00:00:00.000Z",
+			"releaseDate": "2000-01-01T00:00:00.000Z"
+		},
+		"fixes": []
+	},
+	"20.12": {
+		"versionMeta": {
+			"release": "20.12",
+			"major": "20",
+			"minor": "1",
+			"season": "2",
+			"platform": "23.0.0.0",
+			"application": "23.0.0.0",
+			"runtime": "9.1"
+		},
+		"dates": {
+			"releaseCandidate": "2024-03-18T00:00:00.000Z",
+			"generalAvailability": "2024-03-18T00:00:00.000Z",
+			"releaseDate": "2024-05-02T00:00:00.000Z"
+		},
+		"fixes": []
+	},
+	"NAVtoBCMigration": {
+		"versionMeta": {
+			"release": "NAV to BC migration",
+			"major": "0",
+			"minor": "0",
+			"season": "0",
+			"platform": "0.0.0.0",
+			"application": "0.0.0.0",
+			"runtime": "0.0"
+		},
+		"dates": {
+			"releaseCandidate": "2020-01-01T00:00:00.000Z",
+			"generalAvailability": "2020-01-01T00:00:00.000Z",
+			"releaseDate": "2020-01-01T00:00:00.000Z"
+		},
+		"fixes": [
+			{
+				"name": "ApplyLastCalcSurchFactor",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "EstimateLineTotal\\.CalculateOfferPrice\\(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn\\);",
+					"flags": "g"
+				},
+				"replacement": "EstimateLineTotal.CalculateOfferPrice(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn, ApplyLastCalcSurchFactor);"
+			},
+			{
+				"name": "RecordLanguageToCodeunit_Variable",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "Language: Record Language;",
+					"flags": "g"
+				},
+				"replacement": "Language: Codeunit Language;"
+			},
+			{
+				"name": "RecordLanguageToCodeunit-Code",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "CurrReport\\.Language := Language\\.GetLanguageID\\(\"Language Code\"\\);",
+					"flags": "g"
+				},
+				"replacement": "CurrReport.Language := Language.GetLanguageIdOrDefault(\"Language Code\");"
+			},
+			{
+				"name": "JobAdrestoBillTo-Adress",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "[Jj]ob[Rr]ec\\.Address",
+					"flags": "g"
+				},
+				"replacement": "JobRec.\"Bill-to Address\""
+			},
+			{
+				"name": "DetermineBothDates (Single Project)",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "DetermineProgressDate\\.DetermineBothDates\\(Job\\);",
+					"flags": "g"
+				},
+				"replacement": "DetermineProgressDate.DetermineBothDates(Job,true);"
+			},
+			{
+				"name": "DetermineBothDates (Single Project)",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "SearchProgrDate\\.DetermineDate\\(Job\\);",
+					"flags": "g"
+				},
+				"replacement": "SearchProgrDate.DetermineDate(Job,true);"
+			},
+			{
+				"name": "Employee Picture to Image",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "EmployeeRec\\.Picture",
+					"flags": "g"
+				},
+				"replacement": "EmployeeRec.Image"
+			},
+			{
+				"name": "Employee Picture to Image",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "EmployeeRec\\.CalcFields\\(Picture\\)",
+					"flags": "g"
+				},
+				"replacement": "EmployeeRec.CalcFields(Image)"
+			},
+			{
+				"name": "Archive Quotes and Orders To Archive Orders",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "\"Archive Quotes and Orders\"",
+					"flags": "g"
+				},
+				"replacement": "\"Archive Orders\""
+			},
+			{
+				"name": "BuildInvLineBuffer2 > BuildInvLineBuffer",
+				"type": "deprecation",
+				"regex": {
+					"pattern": "BuildInvLineBuffer2",
+					"flags": "g"
+				},
+				"replacement": "BuildInvLineBuffer"
+			},
+			{
+				"name": "CurrReport.PageNo",
+				"type": "warning",
+				"regex": {
+					"pattern": "CurrReport\\.PageNo := 1;",
+					"flags": "g"
+				},
+				"replacement": ""
+			},
+			{
+				"name": "Faulty translation",
+				"type": "warning",
+				"regex": {},
+				"replacement": "Handtekening"
+			},
+			{
+				"name": "CurrReport.PageNo",
+				"type": "warning",
+				"regex": {
+					"pattern": "StrSubstNo\\(Text005, Format\\(CurrReport.PageNo\\)\\)",
+					"flags": "g"
+				},
+				"replacement": "''"
+			},
+			{
+				"name": "CurrReport.CreateTotals",
+				"type": "warning",
+				"regex": {
+					"pattern": "CurrReport.CreateTotals\\(.{0,250}\\);",
+					"flags": "g"
+				},
+				"replacement": ""
+			},
+			{
+				"name": "Enum PeriodType",
+				"type": "warning",
+				"regex": {
+					"pattern": "PeriodType: Option Day,Week,Month,Quarter,Year,\"Accounting Period\";",
+					"flags": "g"
+				},
+				"replacement": "PeriodType: Enum \"Analysis Period Type\";"
+			},
+			{
+				"name": "Actual Reference Point",
+				"type": "warning",
+				"regex": {
+					"pattern": "\"Actual Reference Point\"",
+					"flags": "g"
+				},
+				"replacement": "\"Actual Reference Point (Gantt)\""
+			}
+		]
+	}
 }
