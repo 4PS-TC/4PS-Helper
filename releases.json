@@ -222,6 +222,24 @@
         ]
       },
       {
+        "name": "Spoor CAO",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.\"(Company No\\. Paymaster|Default Cost Component)\"",
+          "flags": "g"
+        },
+        "replacement": ".\"$1 4PS\""
+      },
+      {
+        "name": "Spoor CAO",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.\"Administration No\\. Paymaster\"",
+          "flags": "g"
+        },
+        "replacement": ".\"Admin. No. Paymaster 4PS\""
+      },
+      {
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
