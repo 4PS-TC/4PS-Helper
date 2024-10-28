@@ -1,5 +1,5 @@
 {
-  "24.44": {
+	  "24.44": {
     "versionMeta": {
       "release": "24.44",
       "major": "24",
@@ -159,15 +159,15 @@
         },
         "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
       },
-      // {
-      //   "name": "NoSeriesManagement InitSeries (in comments)",
-      //   "type": "problem",
-      //   "regex": {
-      //     "pattern": "^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
-      //     "flags": "g"
-      //   },
-      //   "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
-      // },
+      {
+        "name": "NoSeriesManagement InitSeries (in comments)",
+        "type": "problem",
+        "regex": {
+          "pattern": "DISABLED      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
+          "flags": "g"
+        },
+        "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
+      },
       {
         "name": "Home Page",
         "type": "problem",
@@ -872,4 +872,3 @@
       }
     ]
   }
-}
