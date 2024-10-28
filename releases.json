@@ -169,41 +169,7 @@
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
       },
       {
-        "name": "Conversion XMLPort 4PS",
-        "type": "problem",
-        "regex": {
-          "pattern": "Record \"Conversion XMLPort 4PS\";",
-          "flags": "g"
-        },
-        "replacement": "Record Fps.ImplementationControl.ConversionXmlPorts.\"Conversion XMLPort 4PS\";",
-        "appDependencies": [
-          {
-            "name": "4PS Implementation Control W1",
-            "id": "3359e125-5f33-4992-8b74-b6597d5d649b",
-            "publisher": "4PS B.V.",
-            "version": "1.0.0.0"
-          }
-        ]
-      },
-      {
-        "name": "Conversion File Format",
-        "type": "problem",
-        "regex": {
-          "pattern": "Record \"Conversion File Format\";",
-          "flags": "g"
-        },
-        "replacement": "Record Fps.ImplementationControl.ConversionXmlPorts.\"Conversion File Format\";",
-        "appDependencies": [
-          {
-            "name": "4PS Implementation Control W1",
-            "id": "3359e125-5f33-4992-8b74-b6597d5d649b",
-            "publisher": "4PS B.V.",
-            "version": "1.0.0.0"
-          }
-        ]
-      },
-      {
-        "name": "Conversion File Format",
+        "name": "E-plan",
         "type": "problem",
         "regex": {
           "pattern": "::\"E-Plan\"",
