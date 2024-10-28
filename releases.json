@@ -228,7 +228,15 @@
           "pattern": "\\.\"(Company No\\. Paymaster|Default Cost Component)\"",
           "flags": "g"
         },
-        "replacement": ".\"$1 4PS\""
+        "replacement": ".\"$1 4PS\"",
+        "appDependencies": [
+          {
+            "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
+            "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       },
       {
         "name": "Spoor CAO",
@@ -237,7 +245,49 @@
           "pattern": "\\.\"Administration No\\. Paymaster\"",
           "flags": "g"
         },
-        "replacement": ".\"Admin. No. Paymaster 4PS\""
+        "replacement": ".\"Admin. No. Paymaster 4PS\"",
+        "appDependencies": [
+          {
+            "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
+            "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Spoor CAO",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.\"(UAR Task|UAR Task Description|UAR Task Pause Allowed)\"",
+          "flags": "g"
+        },
+        "replacement": ".\"$1 4PS\"",
+        "appDependencies": [
+          {
+            "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
+            "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Spoor CAO",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.\"UAR Task Travel Hours Allowed\"",
+          "flags": "g"
+        },
+        "replacement": ".\"UAR Task Trav. Hrs. Allow. 4PS\"",
+        "appDependencies": [
+          {
+            "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
+            "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       },
       {
         "name": "Fix duplicate pragma's - Start",
