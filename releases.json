@@ -324,6 +324,15 @@
         ]
       },
       {
+        "name": "ElemCostObjectControlRec.CalculateAllowedAndPrevious",
+        "type": "problem",
+        "regex": {
+          "pattern": "ElemCostObjectControlRec\\.CalculateAllowedAndPrevious\\((.+)\\);",
+          "flags": "g"
+        },
+        "replacement": "ElemCostObjectControlRec.CalculateAllowedAndPrevious($1, false);"
+      },
+      {
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
