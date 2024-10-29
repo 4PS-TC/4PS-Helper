@@ -145,8 +145,8 @@
         "name": "NoSeriesManagement InitSeries if else",
         "type": "problem",
         "regex": {
-          "pattern": "(then|else)\\s*(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\)",
-          "flags": "g"
+          "pattern": "(then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)",
+          "flags": "gm"
         },
         "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
       },
@@ -154,8 +154,8 @@
         "name": "NoSeriesManagement InitSeries (no comments)",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
-          "flags": "g"
+          "pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);",
+          "flags": "gm"
         },
         "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
       },
