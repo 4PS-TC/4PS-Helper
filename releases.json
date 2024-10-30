@@ -205,6 +205,24 @@
         "replacement": "#if not FPS_IMC_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
       },
       {
+        "name": "Document Portals + Document Portal Projects removal",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"(?:Generate Document Portal Site|Document Portal Site Generated|Document Portal URL|Document Portal Language|DPT Subsite Project|DPT Subsite Doc Type Project|DPT Resp Pers Perm Project|DPT Authority Perm Project)\"[\\),].*)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
+      },
+      {
+        "name": "Document Portals + Document Portal Projects removal",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+\\.(?:SetDPTFields\\(|\"Use New OAuth2\").+)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2\n#pragma warning restore AL0432\n#endif"
+      },
+      {
         "name": "E-plan",
         "type": "problem",
         "regex": {
@@ -336,7 +354,7 @@
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
-          "pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
+          "pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23|FPS_DPP_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
           "flags": "gm"
         },
         "replacement": "$1\n"
