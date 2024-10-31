@@ -181,7 +181,7 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(.+)(\\.FieldName\\(\"Home Page\"\\))(.+)",
+          "pattern": "^(\\s*)(.+)(\\.Field(Name|Caption)\\(\"Home Page\"\\))(.+)",
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
