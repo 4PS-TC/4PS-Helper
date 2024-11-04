@@ -172,19 +172,19 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(.+)(\\.\"Home Page\")(.+)",
+          "pattern": "^(?!\\n)(\\s*)(.+)(\\.\"Home Page\")(.+)(\\s*)$",
           "flags": "gm"
         },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
       },
       {
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(.+)(\\.Field(Name|Caption)\\(\"Home Page\"\\))(.+)",
+          "pattern": "^(?!\\n)(\\s*)(.+)(\\.Field(?:Name|Caption)\\(\"Home Page\"\\))(.+)(\\s*)$",
           "flags": "gm"
         },
-        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
+        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
       },
       {
         "name": "Prognosis End Result Report",
