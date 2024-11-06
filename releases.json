@@ -223,6 +223,15 @@
         "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2\n#pragma warning restore AL0432\n#endif"
       },
       {
+        "name": "Debrief",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\))\")(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not FPS_FSA_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
+      },
+      {
         "name": "E-plan",
         "type": "problem",
         "regex": {
