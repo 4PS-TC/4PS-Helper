@@ -241,6 +241,15 @@
         "replacement": "#if not FPS_PAM_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
       },
       {
+        "name": "Select For Reporting",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"Select For Reporting\")(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
+      },
+      {
         "name": "GetAddressPosition",
         "type": "problem",
         "regex": {
