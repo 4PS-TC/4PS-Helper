@@ -396,6 +396,15 @@
         "replacement": "ElemCostObjectControlRec.CalculateAllowedAndPrevious($1, false);"
       },
       {
+        "name": "Release",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\\.Release)(?:\\(\\)){0,1}(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "$1$2$3(false)$4$5"
+      },
+      {
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
