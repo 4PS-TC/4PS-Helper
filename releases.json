@@ -241,6 +241,15 @@
         "replacement": "#if not FPS_PAM_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
       },
       {
+        "name": "GetAddressPosition",
+        "type": "problem",
+        "regex": {
+          "pattern": "([\\w]+)\\.GetAddressPosition\\(\\s*(.+)\\.Address,\\s*.+,\\s*(.+),\\s*(.+)\\s*\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1.GetAddressPosition($2.Address, $2.City, $2.\"Post Code\", $2.\"Country/Region Code\", $3, $4)"
+      },
+      {
         "name": "E-plan",
         "type": "problem",
         "regex": {
