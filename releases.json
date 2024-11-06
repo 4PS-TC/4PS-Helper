@@ -405,6 +405,15 @@
         "replacement": "$1$2$3(false)$4$5"
       },
       {
+        "name": "GetDescription > GetDescriptionText",
+        "type": "problem",
+        "regex": {
+          "pattern": "([\\w]+)\\.GetDescription\\((.+?)\\);",
+          "flags": "gm"
+        },
+        "replacement": "$1.GetDescriptionText($2);"
+      },
+      {
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
