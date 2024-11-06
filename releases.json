@@ -232,6 +232,15 @@
         "replacement": "#if not FPS_FSA_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
       },
       {
+        "name": "Parcels - 4PS Parcel Management",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.*[^\"])(Parcels)(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not FPS_PAM_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
+      },
+      {
         "name": "E-plan",
         "type": "problem",
         "regex": {
@@ -363,7 +372,7 @@
         "name": "Fix duplicate pragma's - Start",
         "type": "problem",
         "regex": {
-          "pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23|FPS_DPP_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
+          "pattern": "(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23|FPS_DPP_CLEAN23|FPS_PAM_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}",
           "flags": "gm"
         },
         "replacement": "$1\n"
