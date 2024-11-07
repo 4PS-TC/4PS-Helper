@@ -542,7 +542,7 @@
         "type": "deprecation",
         "regex": {
           "pattern": "\\.FindSet\\((true|false), (true|false)\\)",
-          "flags": "g"
+          "flags": "gi"
         },
         "replacement": ".FindSet($1)"
       },
