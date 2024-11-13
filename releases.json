@@ -133,6 +133,15 @@
         "replacement": ".GetNextNo($1)"
       },
       {
+        "name": "NoSeriesManagement TryGetNextNo",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.TryGetNextNo\\((.+)\\)",
+          "flags": "g"
+        },
+        "replacement": ".PeekNextNo($1)"
+      },
+      {
         "name": "NoSeriesManagement SelectSeries",
         "type": "problem",
         "regex": {
