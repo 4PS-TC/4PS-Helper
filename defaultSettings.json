@@ -1,0 +1,57 @@
+{
+  "4ps.codeCleanupActions": [
+    "EventSubscriberStringLiteralToIdentifier",
+    "RemoveSemicolonsFromProcedures",
+    "ExplicitRunTriggerParameter"
+  ],
+  "[al]": {
+    "editor.formatOnSave": true,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "al.backgroundCodeAnalysis": "Project",
+  "al.codeAnalyzers": [
+    "${PerTenantExtensionCop}",
+    "${analyzerFolder}BusinessCentral.LinterCop.dll"
+  ],
+  "al.enableCodeActions": true,
+  "al.enableCodeAnalysis": true,
+  "al.inlayhints.functionReturnTypes.enabled": true,
+  "al.inlayhints.parameterNames.enabled": true,
+  "alNavigator.translationTargetLanguage": "nl-nl",
+  "alOutline.addDataItemToReportColumnName": true,
+  "alOutline.codeCleanupActions": [
+    "AddApplicationAreas",
+    "AddEnumValuesCaptions",
+    "AddMissingParentheses",
+    "ConvertObjectIdsToNames",
+    "FixIdentifiersCase",
+    "FixKeywordsCase",
+    "LockRemovedFieldCaptions",
+    "MakeFlowFieldsReadOnly",
+    "RemoveBeginEnd",
+    "RemoveEmptyLines",
+    "RemoveEmptySections",
+    "RemoveEmptyTriggers",
+    "RemoveRedundantAppAreas",
+    "RemoveRedundantDataClassification",
+    "RemoveStrSubstNoFromError",
+    "RemoveUnusedVariables",
+    "RemoveWithStatements",
+    "TrimTrailingWhitespace",
+    "FormatDocument"
+  ],
+  "alOutline.completionProviders": [
+    "VariableNamesWithType",
+    "VariableDataTypes"
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 30000,
+  "gitlens.views.branches.branches.layout": "tree",
+  "gitlens.views.remotes.branches.layout": "tree"
+}
