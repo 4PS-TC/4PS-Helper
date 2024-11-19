@@ -133,6 +133,15 @@
         "replacement": ".GetNextNo($1)"
       },
       {
+        "name": "NoSeriesManagement TryGetNextNo",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.TryGetNextNo\\((.+)\\)",
+          "flags": "g"
+        },
+        "replacement": ".PeekNextNo($1)"
+      },
+      {
         "name": "NoSeriesManagement SelectSeries",
         "type": "problem",
         "regex": {
@@ -542,7 +551,7 @@
         "type": "deprecation",
         "regex": {
           "pattern": "\\.FindSet\\((true|false), (true|false)\\)",
-          "flags": "g"
+          "flags": "gi"
         },
         "replacement": ".FindSet($1)"
       },
