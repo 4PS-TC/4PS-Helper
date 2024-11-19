@@ -17,7 +17,6 @@
   ],
   "al.enableCodeActions": true,
   "al.enableCodeAnalysis": true,
-  "al.backgroundCodeAnalysis": "Project",
   "al.inlayhints.functionReturnTypes.enabled": true,
   "al.inlayhints.parameterNames.enabled": true,
   "alNavigator.translationTargetLanguage": "nl-nl",
