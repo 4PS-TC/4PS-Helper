@@ -181,7 +181,7 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\\.\"Home Page\")(.+)(\\s*)$",
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"Home Page\")(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
@@ -190,7 +190,7 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\\.Field(?:Name|Caption)\\(\"Home Page\"\\))(.+)(\\s*)$",
+          "pattern": "DISABLED      ^(?!\\n)(\\s*)(.+)(\\.Field(?:Name|Caption)\\(\"Home Page\"\\))(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
