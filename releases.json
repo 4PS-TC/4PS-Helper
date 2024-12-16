@@ -181,7 +181,7 @@
         "name": "Home Page",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\"Home Page\")(.+)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\"Home Page\")(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
@@ -199,7 +199,7 @@
         "name": "Prognosis End Result Report",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif"
@@ -208,7 +208,7 @@
         "name": "Conversion XMLPort 4PS & Conversion File Format",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s*)(.+)(Record \"(?:Conversion XMLPort 4PS|Conversion File Format)\";)",
+          "pattern": "DISABLED 20241216     ^(\\s*)(.+)(Record \"(?:Conversion XMLPort 4PS|Conversion File Format)\";)",
           "flags": "gm"
         },
         "replacement": "#if not FPS_IMC_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
@@ -217,7 +217,7 @@
         "name": "Document Portals + Document Portal Projects removal",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\"(?:Generate Document Portal Site|Document Portal Site Generated|Document Portal URL|Document Portal Language|DPT Subsite Project|DPT Subsite Doc Type Project|DPT Resp Pers Perm Project|DPT Authority Perm Project)\"[\\),].*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\"(?:Generate Document Portal Site|Document Portal Site Generated|Document Portal URL|Document Portal Language|DPT Subsite Project|DPT Subsite Doc Type Project|DPT Resp Pers Perm Project|DPT Authority Perm Project)\"[\\),].*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif"
@@ -226,7 +226,7 @@
         "name": "Document Portals + Document Portal Projects removal",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+\\.(?:SetDPTFields\\(|\"Use New OAuth2\").+)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+\\.(?:SetDPTFields\\(|\"Use New OAuth2\").+)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2\n#pragma warning restore AL0432\n#endif"
@@ -235,7 +235,7 @@
         "name": "Debrief",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\))\")(.+)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\))\")(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_FSA_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
@@ -244,7 +244,7 @@
         "name": "Parcels - 4PS Parcel Management",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.*[^\"])(Parcels)(.+)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.*[^\"])(Parcels)(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_PAM_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
@@ -253,7 +253,7 @@
         "name": "Select For Reporting",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\"Select For Reporting\")(.+)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\"Select For Reporting\")(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
@@ -262,7 +262,7 @@
         "name": "Vendor Assessment Line",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\"Vendor Assessment Line\")(.+)(\\s*)$",
+          "pattern": "DISABLED 20241216     ^(?!\\n)(\\s*)(.+)(\"Vendor Assessment Line\")(.+)(\\s*)$",
           "flags": "gm"
         },
         "replacement": "#if not FPS_VER_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif"
