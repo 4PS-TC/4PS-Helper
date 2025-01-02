@@ -5,28 +5,28 @@
   "brief": "Example app.json",
   "description": "Example app.json",
   "version": "1.0.0.0",
-  "platform": "1.0.0.0",
-  "application": "1.0.0.0",
-  "runtime": "1.0",
   "privacyStatement": "https://4ps.nl/privacybeleid",
   "EULA": "https://4ps.nl",
   "help": "https://support.4ps.nl",
-  "contextSensitiveHelpUrl": "https://support.4ps.nl",
   "url": "https://4ps.nl",
   "logo": "assets/4PS logo.png",
+  "dependencies": [],
   "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "1.0.0.0",
   "idRanges": [
     {
       "from": 60000,
       "to": 69999
     }
   ],
-  "dependencies": [],
+  "target": "Cloud",
+  "contextSensitiveHelpUrl": "https://support.4ps.nl",
+  "runtime": "1.0",
   "features": [
     "NoImplicitWith",
     "TranslationFile"
   ],
-  "target": "Cloud",
   "resourceExposurePolicy": {
     "applyToDevExtension": false,
     "allowDebugging": false,
