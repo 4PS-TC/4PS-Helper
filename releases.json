@@ -1,30 +1,20 @@
 {
-  "24.44 (preprocessors & pragma's)": {
+  "25.1": {
     "versionMeta": {
-      "release": "24.44 (preprocessors & pragma's)",
-      "major": "24",
-      "minor": "4",
-      "season": "4",
-      "platform": "24.0.0.0",
-      "application": "24.0.0.0",
-      "runtime": "13.0"
+      "release": "25.1",
+      "major": "25",
+      "minor": "1",
+      "season": "0",
+      "platform": "25.0.0.0",
+      "application": "25.0.0.0",
+      "runtime": "14.0"
     },
     "dates": {
-      "releaseCandidate": "2024-11-28T00:00:00.000Z",
-      "generalAvailability": "2024-11-28T00:00:00.000Z",
-      "releaseDate": "2024-10-14T00:00:00.000Z"
+      "releaseCandidate": "2025-02-11T00:00:00.000Z",
+      "generalAvailability": "2025-02-11T00:00:00.000Z",
+      "releaseDate": "2025-02-11T00:00:00.000Z"
     },
-    "fixes": [
-      {
-        "name": "Remove preprocessors and pragmas",
-        "type": "problem",
-        "regex": {
-          "pattern": "^\\s*(#if|#pragma|#endif).*\\s*?[\\r\\n]*",
-          "flags": "gm"
-        },
-        "replacement": ""
-      }
-    ]
+    "fixes": []
   },
   "24.44": {
     "versionMeta": {
