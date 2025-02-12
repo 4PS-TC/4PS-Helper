@@ -123,6 +123,33 @@
         "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
       },
       {
+        "name": "Codeunit \"Document-Print\" - PrintProjectInstallments",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintProjectInstallments\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Installments\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintProjectControl",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintProjectControl\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Control\", $2)"
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintPlantInventory",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(?:.+).PrintPlantInventory\\((.+)\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Plant - Inventory\", $2)"
+      },
+      {
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
