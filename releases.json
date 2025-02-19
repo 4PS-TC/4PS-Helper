@@ -14,7 +14,18 @@
       "generalAvailability": "2025-02-11T00:00:00.000Z",
       "releaseDate": "2025-02-11T00:00:00.000Z"
     },
-    "fixes": []
+    "fixes": [
+      {
+        "tc": "TC-3345",
+        "name": "Package Tracking No.",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"Package Tracking No.\")(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n#endif\n$1$2$3$4$5\n#if not CLEAN24\n#pragma warning restore AL0432\n#endif"
+      }
+    ]
   },
   "24.44": {
     "versionMeta": {
