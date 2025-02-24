@@ -14,6 +14,7 @@
       "generalAvailability": "2025-02-11T00:00:00.000Z",
       "releaseDate": "2025-02-11T00:00:00.000Z"
     },
+    "checkTcTicket": "TC-3393",
     "fixes": [
       {
         "tc": "TC-3345",
