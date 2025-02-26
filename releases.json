@@ -17,6 +17,15 @@
     "checkTcTicket": "TC-3393",
     "fixes": [
       {
+        "name": "Remove preprocessors and pragmas",
+        "type": "problem",
+        "regex": {
+          "pattern": "^\\s*(#if|#else|#pragma|#endif).*\\s*?[\\r\\n]*",
+          "flags": "gm"
+        },
+        "replacement": ""
+      },
+      {
         "tc": "TC-3345",
         "name": "Package Tracking No.",
         "type": "problem",
