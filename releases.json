@@ -34,6 +34,16 @@
           "flags": "gm"
         },
         "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n#endif\n$1$2$3$4$5\n#if not CLEAN24\n#pragma warning restore AL0432\n#endif"
+      },
+      {
+        "tc": "TC-4007",
+        "name": "Direct assignment to the \"Filter\" field of type FlowFilter invalidates the filter logic for calculations. Use .SetFilter() or .SetRange() to set the filter correctly.",
+        "type": "problem",
+        "regex": {
+          "pattern": "(.+\\.)*(.+)\\s*:=\\s*(.+\\.)*GetRangeMax\\((.+)\\);",
+          "flags": "g"
+        },
+        "replacement": "$1SetFilter($2, '%1', $3GetRangeMax($4));"
       }
     ]
   },
