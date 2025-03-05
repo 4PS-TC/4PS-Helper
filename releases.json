@@ -98,6 +98,96 @@
             "version": "1.0.0.0"
           }
         ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "regex": {
+          "pattern": "Record \"Conversion File Format\"",
+          "flags": "g"
+        },
+        "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion File Format\"",
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "regex": {
+          "pattern": "Record \"Conversion XMLPort 4PS\"",
+          "flags": "g"
+        },
+        "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion XMLPort 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "regex": {
+          "pattern": "Record \"Implementation Portal Company\"",
+          "flags": "g"
+        },
+        "replacement": "Record Fps.BaseApplication.ImplementationControl.ImplPortal.\"Implementation Portal Company\"",
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "regex": {
+          "pattern": "Codeunit ConversionMgt",
+          "flags": "g"
+        },
+        "replacement": "Codeunit \"Conversion Mgt.\"",
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "regex": {
+          "pattern": "Record \"XML Migration Table\"",
+          "flags": "g"
+        },
+        "replacement": "Record  Fps.BaseApplication.ImplementationControl.ImplCompany.\"XML Migration Table\"",
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       }
     ]
   },
