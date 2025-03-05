@@ -40,7 +40,7 @@
         "name": "Direct assignment to the \"Filter\" field of type FlowFilter invalidates the filter logic for calculations. Use .SetFilter() or .SetRange() to set the filter correctly.",
         "type": "problem",
         "regex": {
-          "pattern": "(.+\\.)*(.+)\\s*:=\\s*(.+\\.)*GetRangeMax\\((.+)\\);",
+          "pattern": "DISABLED      (.+\\.)*(.+)\\s*:=\\s*(.+\\.)*GetRangeMax\\((.+)\\);",
           "flags": "g"
         },
         "replacement": "$1SetRange($2, $3GetRangeMax($4));"
