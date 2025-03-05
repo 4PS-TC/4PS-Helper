@@ -44,6 +44,23 @@
           "flags": "g"
         },
         "replacement": "$1SetFilter($2, '%1', $3GetRangeMax($4));"
+      },
+      {
+        "name": "Vendor Assessment Line",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"Vendor Assessment Line\"",
+          "flags": "g"
+        },
+        "replacement": "\"VER Vendor Assessment Line 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Vendor Rating W1",
+            "id": "1281253f-1413-45a0-a1c8-5dd3c25ccace",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       }
     ]
   },
