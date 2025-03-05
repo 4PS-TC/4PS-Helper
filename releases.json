@@ -195,7 +195,7 @@
         "type": "problem",
         "regex": {
           "pattern": "^(?!\\n)(\\s*)(EmailItem: Record \"Email Item\" temporary;)\\s*$",
-          "flags": "g"
+          "flags": "gm"
         },
         "replacement": "$1$2\n$1DocumentMailing: Codeunit \"Document Mailing\";"
       },
