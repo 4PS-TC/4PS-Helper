@@ -61,6 +61,40 @@
             "version": "1.0.0.0"
           }
         ]
+      },
+      {
+        "name": "Select For Reporting",
+        "type": "problem",
+        "regex": {
+          "pattern": "Codeunit \"Prognosis Management\"",
+          "flags": "g"
+        },
+        "replacement": "Codeunit \"PER Prognosis Management 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Prognosis End Result Report W1",
+            "id": "64e94046-3789-4d76-9107-d8255353e483",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Select For Reporting",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"Select For Reporting\"",
+          "flags": "g"
+        },
+        "replacement": "\"PER Select For Reporting 4PS\"",
+        "appDependencies": [
+          {
+            "name": "4PS Prognosis End Result Report W1",
+            "id": "64e94046-3789-4d76-9107-d8255353e483",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       }
     ]
   },
