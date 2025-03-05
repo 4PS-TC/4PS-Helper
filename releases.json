@@ -43,9 +43,10 @@
           "pattern": "(.+\\.)*(.+)\\s*:=\\s*(.+\\.)*GetRangeMax\\((.+)\\);",
           "flags": "g"
         },
-        "replacement": "$1SetFilter($2, '%1', $3GetRangeMax($4));"
+        "replacement": "$1SetRange($2, $3GetRangeMax($4));"
       },
       {
+        "tc": "TC-3425",
         "name": "Vendor Assessment Line",
         "type": "problem",
         "regex": {
@@ -63,6 +64,7 @@
         ]
       },
       {
+        "tc": "TC-3426",
         "name": "Select For Reporting",
         "type": "problem",
         "regex": {
@@ -80,6 +82,7 @@
         ]
       },
       {
+        "tc": "TC-3426",
         "name": "Select For Reporting",
         "type": "problem",
         "regex": {
