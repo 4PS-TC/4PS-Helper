@@ -198,6 +198,11 @@
       "justification": "To activate later"
     },
     {
+      "id": "LC0077",
+      "action": "None",
+      "justification": "According to Inge, Lintercop will add a fix for this later."
+    },
+    {
       "id": "PTE0005",
       "action": "Info",
       "justification": "To keep codeCop PTE always on."
