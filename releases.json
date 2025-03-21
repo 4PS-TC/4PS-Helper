@@ -17,6 +17,16 @@
     "checkTcTicket": "TC-3393",
     "fixes": [
       {
+        "tc": "TC-4099",
+        "name": "Conversion Comment",
+        "type": "problem",
+        "regex": {
+          "pattern": "Record\\s*\"Conversion Comment\";",
+          "flags": "g"
+        },
+        "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion Comment\";"
+      },
+      {
         "tc": "TC-4145",
         "name": "Implicit conversion",
         "type": "problem",
