@@ -17,6 +17,16 @@
     "checkTcTicket": "TC-3393",
     "fixes": [
       {
+        "tc": "TC-4145",
+        "name": "Implicit conversion",
+        "type": "problem",
+        "regex": {
+          "pattern": "EstSummaryCombType4PS\\s*:=\\s*PrintTotalsBasedOn\\s*\\+\\s*1;",
+          "flags": "g"
+        },
+        "replacement": "EstSummaryCombType4PS := Enum::\"Est. Summary Comb. Type 4PS\".FromInteger(PrintTotalsBasedOn + 1);"
+      },
+      {
         "name": "Remove preprocessors and pragmas",
         "type": "problem",
         "regex": {
