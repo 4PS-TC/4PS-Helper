@@ -647,10 +647,10 @@
         "name": "Release",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(.+)(\\.Release)(?:\\(\\)){0,1}(.+)(\\s*)$",
-          "flags": "gm"
+          "pattern": "(\\.Release)(?:\\(\\))*(?![\\w\\d])",
+          "flags": "g"
         },
-        "replacement": "$1$2$3(false)$4$5"
+        "replacement": ".Release(false)"
       },
       {
         "name": "GetDescription > GetDescriptionText",
