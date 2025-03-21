@@ -17,6 +17,42 @@
     "checkTcTicket": "TC-3393",
     "fixes": [
       {
+        "tc": "TC-4056",
+        "name": "QA Moved to external app",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"QA Deviation List\"",
+          "flags": "g"
+        },
+        "replacement": "\"QAF QA Deviation List 4PS\"",
+        "appDependencies": [
+          {
+            "id": "64f1c702-9d90-4011-b006-2324519debad",
+            "name": "4PS QA W1",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4056",
+        "name": "QA Moved to external app",
+        "type": "problem",
+        "regex": {
+          "pattern": "\"Accident List\"",
+          "flags": "g"
+        },
+        "replacement": "\"QAF Accident List 4PS\"",
+        "appDependencies": [
+          {
+            "id": "64f1c702-9d90-4011-b006-2324519debad",
+            "name": "4PS QA W1",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
         "tc": "TC-4099",
         "name": "Conversion Comment",
         "type": "problem",
