@@ -473,6 +473,26 @@
         "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
       },
       {
+        "tc": "TC-3258",
+        "name": "NoSeriesManagement DoGetNextNo",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*(true|false),\\s*(true|false)\\)",
+          "flags": "gi"
+        },
+        "replacement": ".PeekNextNo($1, $2)"
+      },
+      {
+        "tc": "TC-3258",
+        "name": "NoSeriesManagement DoGetNextNo",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*(true|false)\\)",
+          "flags": "gi"
+        },
+        "replacement": ".PeekNextNo($1, $2)"
+      },
+      {
         "name": "Home Page",
         "type": "problem",
         "regex": {
