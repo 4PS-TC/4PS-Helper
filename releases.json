@@ -474,23 +474,43 @@
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement DoGetNextNo",
+        "name": "NoSeriesManagement DoGetNextNo/PeekNextNo false",
         "type": "problem",
         "regex": {
-          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*(true|false),\\s*(true|false)\\)",
+          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)",
           "flags": "gi"
         },
         "replacement": ".PeekNextNo($1, $2)"
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement DoGetNextNo",
+        "name": "NoSeriesManagement GetNextNo/PeekNextNo false",
         "type": "problem",
         "regex": {
-          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*(true|false)\\)",
+          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)",
           "flags": "gi"
         },
         "replacement": ".PeekNextNo($1, $2)"
+      },
+      {
+        "tc": "TC-3258",
+        "name": "NoSeriesManagement DoGetNextNo/GetNextNo true",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)",
+          "flags": "gi"
+        },
+        "replacement": ".GetNextNo($1, $2, $3)"
+      },
+      {
+        "tc": "TC-3258",
+        "name": "NoSeriesManagement GetNextNo/GetNextNo true",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)",
+          "flags": "gi"
+        },
+        "replacement": ".GetNextNo($1, $2, false)"
       },
       {
         "name": "Home Page",
