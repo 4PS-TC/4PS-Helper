@@ -250,7 +250,7 @@
         "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
         "type": "problem",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(EmailItem: Record \"Email Item\" temporary;)\\s*$",
+          "pattern": "DISABLED      ^(?!\\n)(\\s*)(EmailItem: Record \"Email Item\" temporary;)\\s*$",
           "flags": "gm"
         },
         "replacement": "$1$2\n$1DocumentMailing: Codeunit \"Document Mailing\";"
@@ -260,7 +260,7 @@
         "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
         "type": "problem",
         "regex": {
-          "pattern": "EmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);",
+          "pattern": "DISABLED      EmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);",
           "flags": "g"
         },
         "replacement": "DocumentMailing.SetTempEmailAttachments(TempEmailAttachment);"
