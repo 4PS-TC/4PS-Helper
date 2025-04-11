@@ -208,6 +208,11 @@
       "justification": "Disable for now; it should cause an error later. Fix it by using an if statement and returning an error."
     },
     {
+      "id": "LC0090",
+      "action": "None",
+      "justification": "Not important for now"
+    },
+    {
       "id": "PTE0005",
       "action": "Info",
       "justification": "To keep codeCop PTE always on."
