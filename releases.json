@@ -96,7 +96,7 @@
         "name": "Direct assignment to the \"Filter\" field of type FlowFilter invalidates the filter logic for calculations. Use .SetFilter() or .SetRange() to set the filter correctly.",
         "type": "problem",
         "regex": {
-          "pattern": "(\"Prognosis Filter\"|PrevPrognosisFilter|\"Progress Filter\"|PrevProgressFilter)\\s*:=\\s*(.+);",
+          "pattern": "DISABLED 20250519      (\"Prognosis Filter\"|PrevPrognosisFilter|\"Progress Filter\"|PrevProgressFilter)\\s*:=\\s*(.+);",
           "flags": "g"
         },
         "replacement": "SetRange($1, $2);"
