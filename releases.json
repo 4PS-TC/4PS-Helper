@@ -1,4 +1,22 @@
 {
+  "25.5": {
+    "versionMeta": {
+      "release": "25.5",
+      "major": "25",
+      "minor": "5",
+      "season": "0",
+      "platform": "25.0.0.0",
+      "application": "25.0.0.0",
+      "runtime": "14.0"
+    },
+    "dates": {
+      "releaseCandidate": "2025-06-25T00:00:00.000Z",
+      "generalAvailability": "2025-06-25T00:00:00.000Z",
+      "releaseDate": "2025-06-25T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-3435",
+    "fixes": []
+  },
   "25.1": {
     "versionMeta": {
       "release": "25.1",
