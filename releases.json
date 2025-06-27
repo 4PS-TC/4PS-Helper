@@ -15,7 +15,28 @@
       "releaseDate": "2025-06-25T00:00:00.000Z"
     },
     "checkTcTicket": "TC-3435",
-    "fixes": []
+    "fixes": [
+      {
+        "tc": "TC-4660",
+        "name": "Project roundfactor (option to enum)",
+        "type": "problem",
+        "regex": {
+          "pattern": "Option\\s*None,\"1\",\"1000\",\"1000000\"",
+          "flags": "g"
+        },
+        "replacement": "Enum \"PRJ Round Factor 4PS\""
+      },
+      {
+        "tc": "TC-4660",
+        "name": "Project roundfactor (option to enum)",
+        "type": "problem",
+        "regex": {
+          "pattern": "\\s+OptionCaption\\s*=\\s*'None,1,1000,1000000';",
+          "flags": "g"
+        },
+        "replacement": ""
+      }
+    ]
   },
   "25.1": {
     "versionMeta": {
