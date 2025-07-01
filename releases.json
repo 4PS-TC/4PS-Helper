@@ -35,6 +35,66 @@
           "flags": "g"
         },
         "replacement": ""
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.Day()"
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.Month()"
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.Year()"
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.DayOfWeek()"
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.WeekNo()"
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "regex": {
+          "pattern": "Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)",
+          "flags": "g"
+        },
+        "replacement": "$1.Year()"
       }
     ]
   },
