@@ -113,6 +113,36 @@
             "version": "25.5.0.0"
           }
         ]
+      },
+      {
+        "tc": "TC-4633",
+        "name": "Format Addr 4PS",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n"
+      },
+      {
+        "tc": "TC-4633",
+        "name": "Format Addr 4PS",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";\\r?\\n\\s*){2,}",
+          "flags": "gm"
+        },
+        "replacement": "$1$2"
+      },
+      {
+        "tc": "TC-4633",
+        "name": "Format Addr 4PS",
+        "type": "problem",
+        "regex": {
+          "pattern": "(?:FormatAddr|FormatAddress)\\.(ContactVisitAddr|Address|PlotNo|OptionQuote|ExitOrderInv|ExitOrderSales|Project|ProjectLoc|ServOrder|ServOrderLoc|ServiceLocation|PlantLoc|PlantOrderToLoc|PlantOrderFromLoc|PlantTransportOrderToLoc|PlantTransportOrderFromLoc|PostedPlantTransportOrderToLoc|PostedPlantTranspOrderFromLoc|ExitOrderBillTo|ExitOrderShipTo|CompanyPostalAddr|GenericSalesHeaderBillTo|GenericSalesHeaderShipTo|HouseNo|SplitAddress|Plot)\\(",
+          "flags": "g"
+        },
+        "replacement": "FormatAddr4PS.$1("
       }
     ]
   },
