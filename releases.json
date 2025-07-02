@@ -95,6 +95,24 @@
           "flags": "g"
         },
         "replacement": "$1.Year()"
+      },
+      {
+        "tc": "TC-3267",
+        "name": "Table 'Debrief XXX' is marked for removal. Reason: Table is to be moved to the FSA extension, which should be taken as a dependency.. Tag: 24.0.",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\))\")(.+)(\\s*)$",
+          "flags": "gm"
+        },
+        "replacement": "$1$2$3$4$5",
+        "appDependencies": [
+          {
+            "id": "f5af3081-bc9f-4b36-a4ca-23aa0fcd0a25",
+            "name": "4PS Field Service App W1",
+            "publisher": "4PS B.V.",
+            "version": "25.5.0.0"
+          }
+        ]
       }
     ]
   },
