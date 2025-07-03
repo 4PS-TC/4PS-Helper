@@ -548,6 +548,7 @@
         "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Plant - Inventory\", $2)"
       },
       {
+        "tc": "TC-3258",
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
@@ -557,7 +558,8 @@
         "replacement": "Codeunit \"No. Series\";"
       },
       {
-        "name": "NoSeriesManagement SetNoSeriesLineFilter",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);",
@@ -566,7 +568,8 @@
         "replacement": ".GetNoSeriesLine($1, $2, $3, false);"
       },
       {
-        "name": "NoSeriesManagement SetSeries",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.SetSeries\\((.+)\\)",
@@ -575,7 +578,8 @@
         "replacement": ".GetNextNo($1)"
       },
       {
-        "name": "NoSeriesManagement TryGetNextNo",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.TryGetNextNo\\((.+)\\)",
@@ -584,7 +588,8 @@
         "replacement": ".PeekNextNo($1)"
       },
       {
-        "name": "NoSeriesManagement SelectSeries",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)",
@@ -593,7 +598,8 @@
         "replacement": ".LookupRelatedNoSeries($2, $1, $3)"
       },
       {
-        "name": "NoSeriesManagement InitSeries if else",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "(then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)",
@@ -602,7 +608,8 @@
         "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
       },
       {
-        "name": "NoSeriesManagement InitSeries (no comments)",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);",
@@ -611,7 +618,8 @@
         "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
       },
       {
-        "name": "NoSeriesManagement InitSeries (in comments)",
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "DISABLED      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
@@ -621,7 +629,7 @@
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement DoGetNextNo/PeekNextNo false",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)",
@@ -631,7 +639,7 @@
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement GetNextNo/PeekNextNo false",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)",
@@ -641,7 +649,7 @@
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement DoGetNextNo/GetNextNo true",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)",
@@ -651,7 +659,7 @@
       },
       {
         "tc": "TC-3258",
-        "name": "NoSeriesManagement GetNextNo/GetNextNo true",
+        "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
           "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)",
@@ -1514,7 +1522,10 @@
       {
         "name": "Faulty translation",
         "type": "warning",
-        "regex": {},
+        "regex": {
+          "pattern": "DISABLED",
+          "flags": "g"
+        },
         "replacement": "Handtekening"
       },
       {
