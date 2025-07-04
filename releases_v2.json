@@ -1,0 +1,1235 @@
+{
+  "25.5": {
+    "versionMeta": {
+      "release": "25.5",
+      "major": "25",
+      "minor": "5",
+      "season": "0",
+      "platform": "25.0.0.0",
+      "application": "25.0.0.0",
+      "runtime": "14.0"
+    },
+    "dates": {
+      "releaseCandidate": "2025-06-25T00:00:00.000Z",
+      "generalAvailability": "2025-06-25T00:00:00.000Z",
+      "releaseDate": "2025-06-25T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-3435",
+    "fixes": [
+      {
+        "tc": "TC-4660",
+        "name": "Project roundfactor (option to enum)",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Option\\s*None,\"1\",\"1000\",\"1000000\"/g",
+            "replacement": "Enum \"PRJ Round Factor 4PS\""
+          },
+          {
+            "regex": "/\\s+OptionCaption\\s*=\\s*'None,1,1000,1000000';/g",
+            "replacement": ""
+          }
+        ]
+      },
+      {
+        "tc": "TC-4674",
+        "name": "Replace Date2XXX functions with functions on date(time) objects",
+        "type": "optional",
+        "replacements": [
+          {
+            "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)/g",
+            "replacement": "$1.Day()"
+          },
+          {
+            "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)/g",
+            "replacement": "$1.Month()"
+          },
+          {
+            "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)/g",
+            "replacement": "$1.Year()"
+          },
+          {
+            "regex": "/Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)/g",
+            "replacement": "$1.DayOfWeek()"
+          },
+          {
+            "regex": "/Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)/g",
+            "replacement": "$1.WeekNo()"
+          },
+          {
+            "regex": "/Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)/g",
+            "replacement": "$1.Year()"
+          }
+        ]
+      },
+      {
+        "tc": "TC-3267",
+        "name": "Table 'Debrief XXX' is marked for removal. Reason: Table is to be moved to the FSA extension, which should be taken as a dependency.. Tag: 24.0.",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\)|Debrief Hour Accounting \\(Mob\\.\\)|4PS-Mobile Setup|Mobile Item Usage)\")(.+)(\\s*)$/gm",
+            "replacement": "$1$2$3$4$5"
+          }
+        ],
+        "appDependencies": [
+          {
+            "id": "f5af3081-bc9f-4b36-a4ca-23aa0fcd0a25",
+            "name": "4PS Field Service App W1",
+            "publisher": "4PS B.V.",
+            "version": "25.5.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4633",
+        "name": "Format Addr 4PS",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)/gm",
+            "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n"
+          },
+          {
+            "regex": "/^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";\\r?\\n\\s*){2,}/gm",
+            "replacement": "$1$2"
+          },
+          {
+            "regex": "/(?:FormatAddr|FormatAddress)\\.(ContactVisitAddr|Address|PlotNo|OptionQuote|ExitOrderInv|ExitOrderSales|Project|ProjectLoc|ServOrder|ServOrderLoc|ServiceLocation|PlantLoc|PlantOrderToLoc|PlantOrderFromLoc|PlantTransportOrderToLoc|PlantTransportOrderFromLoc|PostedPlantTransportOrderToLoc|PostedPlantTranspOrderFromLoc|ExitOrderBillTo|ExitOrderShipTo|CompanyPostalAddr|GenericSalesHeaderBillTo|GenericSalesHeaderShipTo|HouseNo|SplitAddress|Plot)\\(/g",
+            "replacement": "FormatAddr4PS.$1("
+          }
+        ]
+      }
+    ]
+  },
+  "25.1": {
+    "versionMeta": {
+      "release": "25.1",
+      "major": "25",
+      "minor": "1",
+      "season": "0",
+      "platform": "25.0.0.0",
+      "application": "25.0.0.0",
+      "runtime": "14.0"
+    },
+    "dates": {
+      "releaseCandidate": "2025-02-11T00:00:00.000Z",
+      "generalAvailability": "2025-02-11T00:00:00.000Z",
+      "releaseDate": "2025-02-11T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-3393",
+    "fixes": [
+      {
+        "tc": "TC-4056",
+        "name": "QA Moved to external app",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/\"QA Deviation List\"/g",
+            "replacement": "\"QAF QA Deviation List 4PS\""
+          },
+          {
+            "regex": "/\"Accident List\"/g",
+            "replacement": "\"QAF Accident List 4PS\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "id": "64f1c702-9d90-4011-b006-2324519debad",
+            "name": "4PS QA W1",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4099",
+        "name": "Conversion Comment",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Record\\s*\"Conversion Comment\";/g",
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion Comment\";"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4145",
+        "name": "Implicit conversion",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/EstSummaryCombType4PS\\s*:=\\s*PrintTotalsBasedOn\\s*\\+\\s*1;/g",
+            "replacement": "EstSummaryCombType4PS := Enum::\"Est. Summary Comb. Type 4PS\".FromInteger(PrintTotalsBasedOn + 1);"
+          }
+        ]
+      },
+      {
+        "name": "Remove preprocessors and pragmas",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^\\s*(#if|#else|#pragma|#endif).*\\s*?[\\r\\n]*/gm",
+            "replacement": ""
+          }
+        ]
+      },
+      {
+        "tc": "TC-3345",
+        "name": "Package Tracking No.",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"Package Tracking No.\")(.+)(\\s*)$/gm",
+            "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n#endif\n$1$2$3$4$5\n#if not CLEAN24\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "tc": "TC-4007",
+        "name": "Direct assignment to the \"Filter\" field of type FlowFilter invalidates the filter logic for calculations. Use .SetFilter() or .SetRange() to set the filter correctly.",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/(\"Prognosis Filter\"|PrevPrognosisFilter|\"Progress Filter\"|PrevProgressFilter)\\s*:=\\s*(.+);/g",
+            "replacement": "SetRange($1, $2);",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "tc": "TC-3425",
+        "name": "Vendor Assessment Line",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/\"Vendor Assessment Line\"/g",
+            "replacement": "\"VER Vendor Assessment Line 4PS\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "name": "4PS Vendor Rating W1",
+            "id": "1281253f-1413-45a0-a1c8-5dd3c25ccace",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-3426",
+        "name": "Select For Reporting",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Codeunit \"Prognosis Management\"/g",
+            "replacement": "Codeunit \"PER Prognosis Management 4PS\""
+          },
+          {
+            "regex": "/\"Select For Reporting\"/g",
+            "replacement": "\"PER Select For Reporting 4PS\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "name": "4PS Prognosis End Result Report W1",
+            "id": "64e94046-3789-4d76-9107-d8255353e483",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4033",
+        "name": "XML Implementations",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Record \"Conversion File Format\"/g",
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion File Format\""
+          },
+          {
+            "regex": "/Record \"Conversion XMLPort 4PS\"/g",
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion XMLPort 4PS\""
+          },
+          {
+            "regex": "/Record \"Implementation Portal Company\"/g",
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ImplPortal.\"Implementation Portal Company\""
+          },
+          {
+            "regex": "/Codeunit ConversionMgt/g",
+            "replacement": "Codeunit \"Conversion Mgt.\""
+          },
+          {
+            "regex": "/Record \"XML Migration Table\"/g",
+            "replacement": "Record  Fps.BaseApplication.ImplementationControl.ImplCompany.\"XML Migration Table\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "name": "4PS Base Application W1",
+            "id": "247e12d4-2649-4390-8349-240a67f10aa5",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "tc": "TC-4008",
+        "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(EmailItem: Record \"Email Item\" temporary;)\\s*$/gm",
+            "replacement": "$1$2\n$1DocumentMailing: Codeunit \"Document Mailing\";",
+            "disable": true
+          },
+          {
+            "regex": "/EmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);/g",
+            "replacement": "DocumentMailing.SetTempEmailAttachments(TempEmailAttachment);",
+            "disable": true
+          }
+        ]
+      }
+    ]
+  },
+  "24.44": {
+    "versionMeta": {
+      "release": "24.44",
+      "major": "24",
+      "minor": "4",
+      "season": "4",
+      "platform": "24.0.0.0",
+      "application": "24.0.0.0",
+      "runtime": "13.0"
+    },
+    "dates": {
+      "releaseCandidate": "2024-11-28T00:00:00.000Z",
+      "generalAvailability": "2024-11-28T00:00:00.000Z",
+      "releaseDate": "2024-10-14T00:00:00.000Z"
+    },
+    "fixes": [
+      {
+        "name": "Codeunit \"Document-Mailing\"",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/[C|c]odeunit \"Document-Mailing\"/g",
+            "replacement": "Codeunit \"Document Mailing\""
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\";",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";/gm",
+            "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintBlanketScheme",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\)/gm",
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - GetReportSelectionForEmailAttachmentUsage",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - SaveSOAppointmentLettersAsExternalDocuments",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
+            "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintPlantInventoryCourse",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^\\s*(?:.+).PrintPlantInventoryCourse\\((.+)\\)/gm",
+            "replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServContract",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintServContract\\((.+)\\)/gm",
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServOrder",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintServOrder\\((.+)\\)/gm",
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintServOrderTexts",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintServOrderTexts\\((.+)\\)/gm",
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintSurvey",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintSurvey\\((.+)\\)/gm",
+            "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintProjectInstallments",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintProjectInstallments\\((.+)\\)/gm",
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Installments\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintProjectControl",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintProjectControl\\((.+)\\)/gm",
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Control\", $2)"
+          }
+        ]
+      },
+      {
+        "name": "Codeunit \"Document-Print\" - PrintPlantInventory",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(?:.+).PrintPlantInventory\\((.+)\\)/gm",
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Plant - Inventory\", $2)"
+          }
+        ]
+      },
+      {
+        "tc": "TC-3258",
+        "name": "Codeunit NoSeriesManagement;",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/[C|c]odeunit NoSeriesManagement;/g",
+            "replacement": "Codeunit \"No. Series\";"
+          },
+          {
+            "regex": "/\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);/g",
+            "replacement": ".GetNoSeriesLine($1, $2, $3, false);"
+          },
+          {
+            "regex": "/\\.SetSeries\\((.+)\\)/g",
+            "replacement": ".GetNextNo($1)"
+          },
+          {
+            "regex": "/\\.TryGetNextNo\\((.+)\\)/g",
+            "replacement": ".PeekNextNo($1)"
+          },
+          {
+            "regex": "/\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)/g",
+            "replacement": ".LookupRelatedNoSeries($2, $1, $3)"
+          },
+          {
+            "regex": "/(then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)/gm",
+            "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
+          },
+          {
+            "regex": "/^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);/gm",
+            "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
+          },
+          {
+            "regex": "/^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);/g",
+            "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);",
+            "disable": true
+          },
+          {
+            "regex": "/\\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)/gi",
+            "replacement": ".PeekNextNo($1, $2)"
+          },
+          {
+            "regex": "/\\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)/gi",
+            "replacement": ".PeekNextNo($1, $2)"
+          },
+          {
+            "regex": "/\\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)/gi",
+            "replacement": ".GetNextNo($1, $2, $3)"
+          },
+          {
+            "regex": "/\\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)/gi",
+            "replacement": ".GetNextNo($1, $2, false)"
+          }
+        ]
+      },
+      {
+        "name": "Home Page",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"Home Page\")(.+)(\\s*)$/gm",
+            "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n#endif\n$1$2$3$4$5\n#if not CLEAN24\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          },
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\\.Field(?:Name|Caption)\\(\"Home Page\"\\))(.+)(\\s*)$/gm",
+            "replacement": "#if not CLEAN24\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Prognosis End Result Report",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\\.CalcEstimateResultPrognosis\\([^;]*;)(\\s*)$/gm",
+            "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432$1$2$3$4\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Conversion XMLPort 4PS & Conversion File Format",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)(.+)(Record \"(?:Conversion XMLPort 4PS|Conversion File Format)\";)/gm",
+            "replacement": "#if not FPS_IMC_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Document Portals + Document Portal Projects removal",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"(?:Generate Document Portal Site|Document Portal Site Generated|Document Portal URL|Document Portal Language|DPT Subsite Project|DPT Subsite Doc Type Project|DPT Resp Pers Perm Project|DPT Authority Perm Project)\"[\\),].*)$/gm",
+            "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2$3\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          },
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+\\.(?:SetDPTFields\\(|\"Use New OAuth2\").+)$/gm",
+            "replacement": "#if not FPS_DPP_CLEAN23\n#pragma warning disable AL0432\n$1$2\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Debrief",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\))\")(.+)(\\s*)$/gm",
+            "replacement": "#if not FPS_FSA_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Parcels - 4PS Parcel Management",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.*[^\"])(Parcels)(.+)(\\s*)$/gm",
+            "replacement": "#if not FPS_PAM_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Select For Reporting",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"Select For Reporting\")(.+)(\\s*)$/gm",
+            "replacement": "#if not FPS_PER_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "Vendor Assessment Line",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/^(?!\\n)(\\s*)(.+)(\"Vendor Assessment Line\")(.+)(\\s*)$/gm",
+            "replacement": "#if not FPS_VER_CLEAN23\n#pragma warning disable AL0432\n$1$2$3$4$5\n#pragma warning restore AL0432\n#endif",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "GetAddressPosition",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/([\\w]+)\\.GetAddressPosition\\(\\s*(.+)\\.Address,\\s*.+,\\s*(.+),\\s*(.+)\\s*\\)/gm",
+            "replacement": "$1.GetAddressPosition($2.Address, $2.City, $2.\"Post Code\", $2.\"Country/Region Code\", $3, $4)"
+          }
+        ]
+      },
+      {
+        "name": "E-plan",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/::\"E-Plan\"/g",
+            "replacement": "::\"E-Plan\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "name": "4PS Interface E Plan W1",
+            "id": "27dc84c3-bb5d-4f92-9125-8bbac23a5356",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Spoor CAO",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/\\.\"(Company No\\. Paymaster|Default Cost Component)\"/g",
+            "replacement": ".\"$1 4PS\""
+          },
+          {
+            "regex": "/\\.\"Administration No\\. Paymaster\"/g",
+            "replacement": ".\"Admin. No. Paymaster 4PS\""
+          },
+          {
+            "regex": "/\\.\"(UAR Task|UAR Task Description|UAR Task Pause Allowed)\"/g",
+            "replacement": ".\"$1 4PS\""
+          },
+          {
+            "regex": "/\\.\"UAR Task Travel Hours Allowed\"/g",
+            "replacement": ".\"UAR Task Trav. Hrs. Allow. 4PS\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "id": "6f556aec-20ad-4ded-80ba-0607e29dec12",
+            "name": "4PS Spoor CAO NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "Barcode Scanning",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/\"Barcode Hour Accounting Setup\"/g",
+            "replacement": "\"HRH Barcode Hr. Acc. Setup 4PS\""
+          },
+          {
+            "regex": "/\"Barcode Hour Accounting\"/g",
+            "replacement": "\"HRH Barcode Hour Acc. 4PS\""
+          }
+        ],
+        "appDependencies": [
+          {
+            "name": "4PS Barcode Scanning W1",
+            "id": "78cda4d1-ef38-433a-a0fd-f5d32daf889a",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
+        "name": "ElemCostObjectControlRec.CalculateAllowedAndPrevious",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/ElemCostObjectControlRec\\.CalculateAllowedAndPrevious\\((.+)\\);/g",
+            "replacement": "ElemCostObjectControlRec.CalculateAllowedAndPrevious($1, false);"
+          }
+        ]
+      },
+      {
+        "name": "Release",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/(\\.Release)(?:\\(\\))*(?![\\w\\d])/g",
+            "replacement": ".Release(false)"
+          }
+        ]
+      },
+      {
+        "name": "GetDescription > GetDescriptionText",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/([\\w]+)\\.GetDescription\\((.+?)\\);/gm",
+            "replacement": "$1.GetDescriptionText($2);"
+          }
+        ]
+      },
+      {
+        "name": "Fix duplicate pragma's - Start",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23|FPS_DPP_CLEAN23|FPS_PAM_CLEAN23|FPS_VER_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}/gm",
+            "replacement": "$1\n"
+          }
+        ]
+      },
+      {
+        "name": "Fix duplicate pragma's - End",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/(#pragma warning restore AL0432\\s*#endif\\s*){2,}/gm",
+            "replacement": "$1"
+          },
+          {
+            "regex": "/(#pragma warning disable AL0432)\\n\\s*\\n+/gm",
+            "replacement": "$1\n"
+          }
+        ]
+      }
+    ]
+  },
+  "23.51": {
+    "versionMeta": {
+      "release": "23.51",
+      "major": "23",
+      "minor": "5",
+      "season": "1",
+      "platform": "23.0.0.0",
+      "application": "23.0.0.0",
+      "runtime": "12.0"
+    },
+    "dates": {
+      "releaseCandidate": "2024-03-18T00:00:00.000Z",
+      "generalAvailability": "2024-03-18T00:00:00.000Z",
+      "releaseDate": "2024-05-02T00:00:00.000Z"
+    },
+    "fixes": []
+  },
+  "23.34": {
+    "versionMeta": {
+      "release": "23.34",
+      "major": "23",
+      "minor": "3",
+      "season": "4",
+      "platform": "23.0.0.0",
+      "application": "23.0.0.0",
+      "runtime": "12.0"
+    },
+    "dates": {
+      "releaseCandidate": "2024-03-18T00:00:00.000Z",
+      "generalAvailability": "2024-03-18T00:00:00.000Z",
+      "releaseDate": "2024-05-02T00:00:00.000Z"
+    },
+    "fixes": []
+  },
+  "22.22": {
+    "versionMeta": {
+      "release": "22.22",
+      "major": "22",
+      "minor": "2",
+      "season": "2",
+      "platform": "22.0.0.0",
+      "application": "22.0.0.0",
+      "runtime": "11.0"
+    },
+    "dates": {
+      "releaseCandidate": "2023-07-21T00:00:00.000Z",
+      "generalAvailability": "2023-08-25T00:00:00.000Z",
+      "releaseDate": "2023-10-05T00:00:00.000Z"
+    },
+    "fixes": [
+      {
+        "name": "EstimateLineTotal.DetermineSurchRcpLine",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/EstimateLineTotal\\.DetermineSurchRcpLine.+?, SummarySheet\\);/g",
+            "replacement": "EstimateLineTotal.DetermineSurchRcpLine(\"Estimate Recipe Line\", SummarySheet, PrintTotalsBasedOn);"
+          }
+        ]
+      },
+      {
+        "name": "EstimateLineTotal.SummaryLineInFilter",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/EstimateLineTotal\\.SummaryLineInFilter\\(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\"\\.Amount, \"Summary Sheet Line\"\\.Hours, TotSurchargeAmount, TotSurchargeHours\\);/g",
+            "replacement": "EstimateLineTotal.SummaryLineInFilter(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\".Amount, \"Summary Sheet Line\".Hours, \"Summary Sheet Line\".\"Summary Line Type\".AsInteger(), TotSurchargeAmount, TotSurchargeHours);"
+          }
+        ]
+      },
+      {
+        "name": "Page::Summary Sheet List",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Page::\"Summary Sheet List\"/g",
+            "replacement": "Page::\"Summary Sheets\""
+          },
+          {
+            "regex": "/PAGE::\"Summary Sheet List\"/g",
+            "replacement": "Page::\"Summary Sheets\""
+          }
+        ]
+      },
+      {
+        "name": "LookupBuyFromVendor4PS",
+        "type": "problem",
+        "replacements": [
+          {
+            "regex": "/Rec\\.LookupBuyFromVendor4PS\\(xRec\\)/g",
+            "replacement": "Rec.LookupBuyFromVendor4PS(xRec, Rec.\"Buy-from Vendor Name\")"
+          }
+        ]
+      },
+      {
+        "name": "FindSet",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/\\.FindSet\\((true|false), (true|false)\\)/gi",
+            "replacement": ".FindSet($1)"
+          }
+        ]
+      },
+      {
+        "name": "FindInteractTmplCode",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/FindInteractTmplCode\\(0\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\" \")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(1\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Qte.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(2\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Blnkt. Ord\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(3\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Ord. Cnfrmn.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(4\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Inv.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(5\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Shpt. Note\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(6\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Cr. Memo\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(7\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Stmnt.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(8\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Rmdr.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(9\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Create\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(10\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Post\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(11\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch.Qte.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(12\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Blnkt. Ord.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(13\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Ord.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(14\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Inv.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(15\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Rcpt.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(16\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Cr. Memo\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(17\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Cover Sheet\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(18\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Order\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(19\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Finance Charge Memo\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(20\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Receipt\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(21\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Shipment\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(22\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Ord. Cnfrmn.\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(23\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(24\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract Quote\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(25\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Quote\")"
+          },
+          {
+            "regex": "/FindInteractTmplCode\\(26\\)/g",
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Draft Invoice\")"
+          }
+        ]
+      },
+      {
+        "name": "Cross-Reference No.",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.\"Cross-Reference No.\"\\)/g",
+            "replacement": "; Rec.\"Item Reference No.\")"
+          }
+        ]
+      },
+      {
+        "name": "Unit of Measure (Cross Ref.)",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.\"Unit of Measure \\(Cross Ref.\\)\"\\)/g",
+            "replacement": "; Rec.\"Item Reference Unit of Measure\")"
+          }
+        ]
+      },
+      {
+        "name": "Cross-Reference Type",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.\"Cross-Reference Type\"\\)/g",
+            "replacement": "; Rec.\"Item Reference Type\")"
+          }
+        ]
+      },
+      {
+        "name": "Cross-Reference Type No.",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.\"Cross-Reference Type No.\"\\)/g",
+            "replacement": "; Rec.\"Item Reference Type No.\")"
+          }
+        ]
+      },
+      {
+        "name": "System ID",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.Id\\)/g",
+            "replacement": "; Rec.SystemId)"
+          }
+        ]
+      },
+      {
+        "name": "Coupled to CRM",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/; Rec\\.\"Coupled to CRM\"\\)/g",
+            "replacement": "; Rec.\"Coupled to Dataverse\")"
+          }
+        ]
+      },
+      {
+        "name": "InDataset removal",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/\\[InDataSet\\][\\r\\n\\s]+/g",
+            "replacement": ""
+          }
+        ]
+      }
+    ]
+  },
+  "21.41": {
+    "versionMeta": {
+      "release": "21.41",
+      "major": "21",
+      "minor": "4",
+      "season": "1",
+      "platform": "21.0.0.0",
+      "application": "21.0.0.0",
+      "runtime": "10.0"
+    },
+    "dates": {
+      "releaseCandidate": "2000-01-01T00:00:00.000Z",
+      "generalAvailability": "2000-01-01T00:00:00.000Z",
+      "releaseDate": "2000-01-01T00:00:00.000Z"
+    },
+    "fixes": []
+  },
+  "21.24": {
+    "versionMeta": {
+      "release": "21.24",
+      "major": "21",
+      "minor": "2",
+      "season": "4",
+      "platform": "21.0.0.0",
+      "application": "21.0.0.0",
+      "runtime": "10.0"
+    },
+    "dates": {
+      "releaseCandidate": "2000-01-01T00:00:00.000Z",
+      "generalAvailability": "2000-01-01T00:00:00.000Z",
+      "releaseDate": "2000-01-01T00:00:00.000Z"
+    },
+    "fixes": []
+  },
+  "20.12": {
+    "versionMeta": {
+      "release": "20.12",
+      "major": "20",
+      "minor": "1",
+      "season": "2",
+      "platform": "23.0.0.0",
+      "application": "23.0.0.0",
+      "runtime": "9.1"
+    },
+    "dates": {
+      "releaseCandidate": "2024-03-18T00:00:00.000Z",
+      "generalAvailability": "2024-03-18T00:00:00.000Z",
+      "releaseDate": "2024-05-02T00:00:00.000Z"
+    },
+    "fixes": []
+  },
+  "NAVtoBCMigration": {
+    "versionMeta": {
+      "release": "NAV to BC migration",
+      "major": "0",
+      "minor": "0",
+      "season": "0",
+      "platform": "0.0.0.0",
+      "application": "0.0.0.0",
+      "runtime": "0.0"
+    },
+    "dates": {
+      "releaseCandidate": "2020-01-01T00:00:00.000Z",
+      "generalAvailability": "2020-01-01T00:00:00.000Z",
+      "releaseDate": "2020-01-01T00:00:00.000Z"
+    },
+    "fixes": [
+      {
+        "name": "ApplyLastCalcSurchFactor",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/EstimateLineTotal\\.CalculateOfferPrice\\(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn\\);/g",
+            "replacement": "EstimateLineTotal.CalculateOfferPrice(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn, ApplyLastCalcSurchFactor);"
+          }
+        ]
+      },
+      {
+        "name": "RecordLanguageToCodeunit_Variable",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/Language: Record Language;/g",
+            "replacement": "Language: Codeunit Language;"
+          }
+        ]
+      },
+      {
+        "name": "RecordLanguageToCodeunit-Code",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/CurrReport\\.Language := Language\\.GetLanguageID\\(\"Language Code\"\\);/g",
+            "replacement": "CurrReport.Language := Language.GetLanguageIdOrDefault(\"Language Code\");"
+          }
+        ]
+      },
+      {
+        "name": "JobAdrestoBillTo-Adress",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/[Jj]ob[Rr]ec\\.Address/g",
+            "replacement": "JobRec.\"Bill-to Address\""
+          }
+        ]
+      },
+      {
+        "name": "DetermineBothDates (Single Project)",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/DetermineProgressDate\\.DetermineBothDates\\(Job\\);/g",
+            "replacement": "DetermineProgressDate.DetermineBothDates(Job,true);"
+          },
+          {
+            "regex": "/SearchProgrDate\\.DetermineDate\\(Job\\);/g",
+            "replacement": "SearchProgrDate.DetermineDate(Job,true);"
+          }
+        ]
+      },
+      {
+        "name": "Employee Picture to Image",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/EmployeeRec\\.Picture/g",
+            "replacement": "EmployeeRec.Image"
+          },
+          {
+            "regex": "/EmployeeRec\\.CalcFields\\(Picture\\)/g",
+            "replacement": "EmployeeRec.CalcFields(Image)"
+          }
+        ]
+      },
+      {
+        "name": "Archive Quotes and Orders To Archive Orders",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/\"Archive Quotes and Orders\"/g",
+            "replacement": "\"Archive Orders\""
+          }
+        ]
+      },
+      {
+        "name": "BuildInvLineBuffer2 > BuildInvLineBuffer",
+        "type": "deprecation",
+        "replacements": [
+          {
+            "regex": "/BuildInvLineBuffer2/g",
+            "replacement": "BuildInvLineBuffer"
+          }
+        ]
+      },
+      {
+        "name": "CurrReport.PageNo",
+        "type": "warning",
+        "replacements": [
+          {
+            "regex": "/CurrReport\\.PageNo := 1;/g",
+            "replacement": ""
+          },
+          {
+            "regex": "/StrSubstNo\\(Text005, Format\\(CurrReport.PageNo\\)\\)/g",
+            "replacement": "''"
+          }
+        ]
+      },
+      {
+        "name": "Faulty translation",
+        "type": "warning",
+        "replacements": [
+          {
+            "regex": "/(?:)/g",
+            "replacement": "Handtekening",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "name": "CurrReport.CreateTotals",
+        "type": "warning",
+        "replacements": [
+          {
+            "regex": "/CurrReport.CreateTotals\\(.{0,250}\\);/g",
+            "replacement": ""
+          }
+        ]
+      },
+      {
+        "name": "Enum PeriodType",
+        "type": "warning",
+        "replacements": [
+          {
+            "regex": "/PeriodType: Option Day,Week,Month,Quarter,Year,\"Accounting Period\";/g",
+            "replacement": "PeriodType: Enum \"Analysis Period Type\";"
+          }
+        ]
+      },
+      {
+        "name": "Actual Reference Point",
+        "type": "warning",
+        "replacements": [
+          {
+            "regex": "/\"Actual Reference Point\"/g",
+            "replacement": "\"Actual Reference Point (Gantt)\""
+          }
+        ]
+      }
+    ]
+  }
+}
