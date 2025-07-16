@@ -1,4 +1,22 @@
 {
+  "26.2": {
+    "versionMeta": {
+      "release": "26.2",
+      "major": "26",
+      "minor": "2",
+      "season": "0",
+      "platform": "26.0.0.0",
+      "application": "26.0.0.0",
+      "runtime": "15.0"
+    },
+    "dates": {
+      "releaseCandidate": "2025-07-17T00:00:00.000Z",
+      "generalAvailability": "2025-07-17T00:00:00.000Z",
+      "releaseDate": "2025-07-17T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-4761",
+    "fixes": []
+  },
   "25.5": {
     "versionMeta": {
       "release": "25.5",
