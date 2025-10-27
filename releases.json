@@ -429,6 +429,26 @@
           "flags": "g"
         },
         "replacement": "DocumentMailing.SetTempEmailAttachments(TempEmailAttachment);"
+      },
+      {
+        "tc": "TC-4008",
+        "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\s*$",
+          "flags": "gm"
+        },
+        "replacement": "$1$2\n$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";"
+      },
+      {
+        "tc": "TC-4008",
+        "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
+        "type": "problem",
+        "regex": {
+          "pattern": "^(?!\\n)(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$",
+          "flags": "gm"
+        },
+        "replacement": "$1MailManagementSubsState4PS.SetTempEmailAttachments(TempEmailAttachment, TempEmailItem);"
       }
     ]
   },
