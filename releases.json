@@ -109,7 +109,7 @@
         "name": "Replace Date2XXX functions with functions on date(time) objects",
         "type": "optional",
         "regex": {
-          "pattern": "Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)",
+          "pattern": "DISABLED 20260108 - Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)",
           "flags": "g"
         },
         "replacement": "$1.Year()"
