@@ -1,4 +1,22 @@
 {
+  "27.1": {
+    "versionMeta": {
+      "release": "27.1 (2026-1)",
+      "major": "27",
+      "minor": "1",
+      "season": "0",
+      "platform": "27.0.0.0",
+      "application": "27.0.0.0",
+      "runtime": "16.0"
+    },
+    "dates": {
+      "releaseCandidate": "2026-03-06T00:00:00.000Z",
+      "generalAvailability": "2026-03-06T00:00:00.000Z",
+      "releaseDate": "2026-03-06T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-5676",
+    "fixes": []
+  },
   "26.2": {
     "versionMeta": {
       "release": "26.2",
