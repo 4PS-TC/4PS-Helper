@@ -303,9 +303,15 @@
       "justification": "New ALcops rule, Not important for now"
     },
     {
+      "id": "PC0013",
+      "action": "Warning",
+      "justification": "New ALcops rule, LC0075 was Warning is now Error, set back to Warning."
+    },
+    {
       "id": "PTE0005",
       "action": "Info",
       "justification": "To keep codeCop PTE always on."
     }
   ]
 }
+
