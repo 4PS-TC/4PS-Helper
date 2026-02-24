@@ -105,112 +105,202 @@
     {
       "id": "LC0001",
       "action": "Warning",
-      "justification": "Fix it by setting the visible property to false"
+      "justification": "Old bcLinterCopRule, replaced, Fix it by setting the visible property to false"
     },
     {
       "id": "LC0002",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0003",
       "action": "Error",
-      "justification": "Do not use an Object ID for properties or variable declarations."
+      "justification": "Old bcLinterCopRule, replaced, Do not use an Object ID for properties or variable declarations."
     },
     {
       "id": "LC0005",
       "action": "Error",
-      "justification": "The casing of variable/method usage must align with the definition."
+      "justification": "Old bcLinterCopRule, replaced, The casing of variable/method usage must align with the definition."
     },
     {
       "id": "LC0010",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0012",
       "action": "Error",
-      "justification": "Using hardcoded IDs in functions like Codeunit.Run() is not allowed."
+      "justification": "Old bcLinterCopRule, replaced, Using hardcoded IDs in functions like Codeunit.Run() is not allowed."
     },
     {
       "id": "LC0022",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0023",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0036",
       "action": "None",
-      "justification": "I want to start tooltipes with sometine else then Specifies"
+      "justification": "Old bcLinterCopRule, replaced, I want to start tooltipes with sometine else then Specifies"
     },
     {
       "id": "LC0038",
       "action": "Info",
-      "justification": "Length of Tooltip"
+      "justification": "Old bcLinterCopRule, replaced, Length of Tooltip"
     },
     {
       "id": "LC0040",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0046",
       "action": "None",
-      "justification": "ignore, can't solve it"
+      "justification": "Old bcLinterCopRule, replaced, ignore, can't solve it"
     },
     {
       "id": "LC0047",
       "action": "None",
-      "justification": "ignore, don't know what \"Tok\" is"
+      "justification": "Old bcLinterCopRule, replaced, ignore, don't know what \"Tok\" is"
     },
     {
       "id": "LC0048",
       "action": "None",
-      "justification": "ignore, don't know what \"Tok\" is"
+      "justification": "Old bcLinterCopRule, replaced, ignore, don't know what \"Tok\" is"
     },
     {
       "id": "LC0053",
       "action": "None",
-      "justification": "Look into this later"
+      "justification": "Old bcLinterCopRule, replaced, Look into this later"
     },
     {
       "id": "LC0063",
       "action": "None",
-      "justification": "To activate later"
+      "justification": "Old bcLinterCopRule, replaced, To activate later"
     },
     {
       "id": "LC0064",
       "action": "None",
-      "justification": "To activate later"
+      "justification": "Old bcLinterCopRule, replaced, To activate later"
     },
     {
       "id": "LC0068",
       "action": "None",
-      "justification": "To activate later"
+      "justification": "Old bcLinterCopRule, replaced, To activate later"
     },
     {
       "id": "LC0069",
       "action": "None",
-      "justification": "To activate later"
+      "justification": "Old bcLinterCopRule, replaced, To activate later"
     },
     {
       "id": "LC0077",
       "action": "None",
-      "justification": "According to Inge, Lintercop will add a fix for this later."
+      "justification": "Old bcLinterCopRule, replaced, According to Inge, Lintercop will add a fix for this later."
     },
     {
       "id": "LC0084",
       "action": "None",
-      "justification": "Disable for now; it should cause an error later. Fix it by using an if statement and returning an error."
+      "justification": "Old bcLinterCopRule, replaced, Disable for now; it should cause an error later. Fix it by using an if statement and returning an error."
     },
     {
       "id": "LC0090",
       "action": "None",
-      "justification": "Not important for now"
+      "justification": "Old bcLinterCopRule, replaced, Not important for now"
+    },
+    {
+      "id": "AC0015",
+      "action": "None",
+      "justification": "New ALcops rule, I want to start tooltipes with sometine else then Specifies"
+    },
+    {
+      "id": "AC0017",
+      "action": "Info",
+      "justification": "New ALcops rule, Length of Tooltip"
+    },
+    {
+      "id": "AC0020",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, can't solve it"
+    },
+    {
+      "id": "AC0021",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, don't know what \"Tok\" is"
+    },
+    {
+      "id": "AC0028",
+      "action": "None",
+      "justification": "New ALcops rule, To activate later"
+    },
+    {
+      "id": "AC0030",
+      "action": "None",
+      "justification": "New ALcops rule, Disable for now; it should cause an error later. Fix it by using an if statement and returning an error."
+    },
+    {
+      "id": "AC0031",
+      "action": "None",
+      "justification": "New ALcops rule, To activate later"
+    },
+    {
+      "id": "DC0001",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, can't solve it"
+    },
+    {
+      "id": "DC0003",
+      "action": "None",
+      "justification": "New ALcops rule, To activate later"
+    },
+    {
+      "id": "FC0002",
+      "action": "Error",
+      "justification": "New ALcops rule, The casing of variable/method usage must align with the definition."
+    },
+    {
+      "id": "FC0003",
+      "action": "None",
+      "justification": "New ALcops rule, According to Inge, Lintercop will add a fix for this later."
+    },
+    {
+      "id": "LC0003",
+      "action": "Error",
+      "justification": "New ALcops rule, Do not use an Object ID for properties or variable declarations."
+    },
+    {
+      "id": "LC0008",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, can't solve it"
+    },
+    {
+      "id": "LC0010",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, can't solve it"
+    },
+    {
+      "id": "LC0048",
+      "action": "None",
+      "justification": "New ALcops rule, ignore, don't know what \"Tok\" is"
+    },
+    {
+      "id": "LC0053",
+      "action": "None",
+      "justification": "New ALcops rule, Look into this later"
+    },
+    {
+      "id": "LC0063",
+      "action": "None",
+      "justification": "New ALcops rule, To activate later"
+    },
+    {
+      "id": "LC0090",
+      "action": "None",
+      "justification": "New ALcops rule, Not important for now"
     },
     {
       "id": "PTE0005",
