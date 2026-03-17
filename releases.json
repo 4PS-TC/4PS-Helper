@@ -21,8 +21,8 @@
         "name": "Table 'Empoly Warehouse Order Arch' is moved. Reason: Moved to 4PS Warehouse App W1 extension. Tag: 26.x.",
         "type": "problem",
         "regex": {
-          "pattern": "Record\\s\"Empoly\\sWarehouse\\sOrder(?:\\sArch|LineArch)\"",
-          "flags": "gm"
+          "pattern": "(Record\\s\"Empoly\\sWarehouse\\sOrder(?:\\sArch|LineArch)\")",
+          "flags": "g"
         },
         "replacement": "$1",
         "appDependencies": [
