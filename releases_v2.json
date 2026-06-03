@@ -10,12 +10,92 @@
       "runtime": "16.0"
     },
     "dates": {
-      "releaseCandidate": "2026-05-11T00:00:00.000Z",
-      "generalAvailability": "2026-05-11T00:00:00.000Z",
-      "releaseDate": "2026-05-11T00:00:00.000Z"
+      "releaseCandidate": "2026-06-26T00:00:00.000Z",
+      "generalAvailability": "2026-06-26T00:00:00.000Z",
+      "releaseDate": "2026-06-26T00:00:00.000Z"
     },
     "checkTcTicket": "TC-5840",
-    "fixes": []
+    "fixes": [
+      {
+        "tc": "TC-6660",
+        "name": "Document-Print 4PS: No overload for method takes x arguments.",
+        "type": "error",
+        "replacements": [
+          {
+            "regex": "/^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)/gm",
+            "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n"
+          },
+          {
+            "regex": "/^(\\s*)(DocumentPrint4PS: Codeunit \"Document-Print 4PS\";\\r?\\n\\s*){2,}/gm",
+            "replacement": "$1$2"
+          },
+          {
+            "regex": "/(DocumentPrint|DocPrint)\\.(GetPurchDocTypeUsage|EmailPurchHeader|SetFilterAndCalcPurchDiscAndPrintPurchHeader|DoPrintPurchHeader|CheckEMailToForPurchHeader|EmailPurchOrderReceipt|PrintPurchOrderReceipt|DoPrintPurchOrderReceipt|PrintBudget|EmailExtensionContract|PrintExtensionContract|DoPrintExtensionContract|PrintAdjustment|PrintOption|PrintPurchaseAction|PrintPurchaseRequisition|PrintProjAdvice|PrintProjCostPlus|PrintProjWorksheet|PrintProjDeliveryNote|PrintProjectElement|PrintPostedProjDeliveryNote|PrintAssemblyProjWorksheet|PrintCustWorksheet|PrintProgress|PrintPrognosis|EmailPlot|PrintPlot|DoPrintPlot|PrintHouseModel|EmailHoursByEmployee|PrintSummarySheet|PrintEstimateNEW|PrintEstimateRAW|PrintBidFormRAW|PrintBidFormCoverPageRAW|PrintTryOutVersionEstimate|PrintRelation|PrintProvWork|PrintServOrder|PrintServOrderTexts|PrintServContract|PrintServLocation|PrintServAdvice|PrintServCostPlus|EmailServiceOrderWorksheet|PrintServiceOrderWorksheet|DoPrintServiceOrderWorksheet|SaveSOAppointmentLettersAsExternalDocuments|SaveCollectInstallmentOverviewAsExternalDocuments|PrintUnitPriceServiceOrder|EmailUnitPriceProdRecording|PrintUnitPriceProdRecording|DoPrintUnitPriceProdRecording|PrintServCall|PrintGlazingServiceCall|EmailWorkOrderWorksheet|PrintWorkOrderWorksheet|DoPrintWorkOrderWorksheet|EmailSubcontractorServiceOrderList|DoPrintSubcontractorServiceOrderList|PrintItemJnl|PrintItemInvJnl|PrintInventoryMovement|PrintProjectDispatchNote|PrintPickingList|PrintWhseShipment|PrintPlantRequest|PrintDispatchNote|PrintPlantPickingList|PrintPlantReturnOrder|PrintPlantTransportOrder|PrintPostedPlantTransportOrder|PrintPlantTransportRideList|PrintPlantTransportRide|PrintExitOrder|PrintInvoiceProposal|PrintPlantRentalCorrection|PrintPlantInspection|PrintRentalFreeOrder|PrintPlantInventory|PrintPlantInventoryCourse|PrintDocW|PrintDocI|PrintSegmentLabel|PrintHours|PrintHoursProject|PrintPostedHoursList|PrintFrostOutRegistration|PrintFrostOutRequest|PrintBlanketScheme|PrintReqWksh|PrintPurchReminder|EmailOptionQuote|PrintOptionQuote|DoPrintOptionQuote|PrintProjectInstallments|PrintProjectControl|PrintProjectInventoryDelivery|PrintProjectInventory|PrintTenderParagraphbyPrinc|PrintInstallMotivation|PrintInstallOverview|PrintTryout|PrintTryoutQuote|PrintUnitPriceProdMot|PrintUnitPricePriceList|PrintUnitPrice|PrintPaymentHistory|PrintPaymentHistoryOverview|PrintProposalOverview|PrintSiteManHrAccProject|PrintSiteManHrAccEmployee|PrintSiteManHrAccExtByComp|PrintShippingOrder|PrintPostedShippingOrder|PrintJobLedger|EmailPostedShippingOrder|DoPrintPostedShippingOrder|PrintProjectResultForecast|PrintServiceCollectiveList|PrintSOAppointmentLetter|PrintSurvey|PrintSurveyLocation|PrintSurveyObject|PrintServiceContract_Object|PrintServiceContractControl|PrintProjectCollectiveList|PrintServiceObjectList|PrintFinalInstallmentDetails|PrintWorkOrder|PrintWorkOrders|PrintObjectFilterList|PrintPriceBookInstallmentOverview|PrintPriceBookCollectInstallmentOverview|GetReportSelectionForPrintUsage|GetReportSelectionForEmailAttachmentUsage|GetReportSelectionForPrintUsageVendor|GetReportSelectionForEmailAttachmentUsageVendor|GetDefaultReportSelectionForEmailAttachmentUsage|SaveAnyRecordReportAsPdfOnClient|SaveAnyRecordReportAsPdf|SaveAnyRecordReportAsPdf|PrintPurchQuoteThanksLetter|EmailPostedPurchReceipt|PrintPostedPurchReceipt|DoPrintPostedPurchReceipt|PrintPlantQuote|PrintProjectMaterialReqLine|EmailDocket|SaveDocketAsPdf|ComposeAttachmentFileNameForDocket|PrintGenericChecklist|GetFilteredChecklistCopiesBySource|IsWorkOrderBasedOn|EmailDeliveryReport|PrintDeliveryReport|DoPrintDeliveryReport|PrintHoursByEmployee|OnDoPrintPurchHeaderOnAfterSetEMailSubject|OnBeforeDoPrintServiceOrderWorksheet|OnBeforeDoPrintWorkOrderWorksheet)\\(/g",
+            "replacement": "$14PS.$2("
+          },
+          {
+            "regex": "/GetReportSelectionForPrintUsage\\((.+),\\s*(.+),\\s*(false|true),\\s*(.+)\\)/g",
+            "replacement": "GetReportSelectionForPrintUsage($1, $2, $4)"
+          }
+        ]
+      },
+      {
+        "tc": "TC-6659",
+        "name": "VATAmountLine: No overload for method takes x arguments.",
+        "type": "error",
+        "replacements": [
+          {
+            "regex": "/\\/\\/\\s*\"Purchase Header\"\\.\"Posting Date\",\\s*\"Purchase Header\"\\.\"Currency Code\",\\s*\"Purchase Header\"\\.\"Currency Factor\"\\);\\s*4PS\\.o/g",
+            "replacement": ""
+          },
+          {
+            "regex": "/Get(Base|Amount)LCY\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(false|true)\\);\\s*\\/\\/.*?4PS\\.n/g",
+            "replacement": "Get$1LCY($2, $3, $4);"
+          }
+        ]
+      },
+      {
+        "tc": "TC-6658",
+        "name": "EstimateLine: No overload for method takes x arguments.",
+        "type": "error",
+        "replacements": [
+          {
+            "regex": "/CurrExchRate\\.ExchangeAmtFCYToLCY\\(\\s*0,\\s*'',\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(false|true)\\)/gm",
+            "replacement": "CurrExchRate.ExchangeAmtFCYToLCY($1, $2, $3, $4)"
+          },
+          {
+            "regex": "/ExchangeAmtLCYToFCY\\((.+?), (false|true), (false|true), (false|true)\\)/g",
+            "replacement": "ExchangeAmtLCYToFCY($1, $3, $4)"
+          }
+        ]
+      },
+      {
+        "tc": "TC-6657",
+        "name": "CurrencyExchRate: No overload for method takes x arguments.",
+        "type": "error",
+        "replacements": [
+          {
+            "regex": "/CurrencyExchRate\\.ExchangeAmtLCYToFCY\\(\\s+0, '', WorkDate\\(\\), CustomerRec\\.\"Currency Code\",\\s+\"(Basic|Sales) Price\", \"Currency Factor\", true\\)/gm",
+            "replacement": "CurrencyExchRate.ExchangeAmtLCYToFCY(WorkDate, CustomerRec.\"Currency Code\", \"$1 Price\", \"Currency Factor\")"
+          },
+          {
+            "regex": "/\"Currency Factor\" := CurrencyExchRate.ExchangeRate\\(\\s+0, '', WorkDate\\(\\), CustomerRec\\.\"Currency Code\", true\\)/gm",
+            "replacement": "\"Currency Factor\" := CurrencyExchRate.ExchangeRate(WorkDate(), CustomerRec.\"Currency Code\")"
+          }
+        ]
+      },
+      {
+        "tc": "TC-6652",
+        "name": "Argument 2: cannot convert from 'Enum Fps.BaseApplication.Sales.\"SAL Document Type\"' to the type of Argument 1 'Enum Fps.BaseApplication.Sales.\"SAL Document Type 2\"'",
+        "type": "error",
+        "replacements": [
+          {
+            "regex": "/SalesReportTextLine\\.SetRange\\(\"Document Type\", (TempGenericSales|GenericSales)(Header|Line)\\.\"Document Type\"\\);/g",
+            "replacement": "SalesReportTextLine.SetRange(\"Document Type\", Enum::\"SAL Document Type 2\".FromInteger($1$2.\"Document Type\".AsInteger()));"
+          }
+        ]
+      }
+    ]
   },
   "27.1": {
     "versionMeta": {
