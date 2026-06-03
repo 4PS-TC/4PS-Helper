@@ -645,7 +645,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "[C|c]odeunit NoSeriesManagement;",
+          "pattern": "DISABLED 20260603      [C|c]odeunit NoSeriesManagement;",
           "flags": "g"
         },
         "replacement": "Codeunit \"No. Series\";"
@@ -655,7 +655,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);",
+          "pattern": "DISABLED 20260603      \\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);",
           "flags": "g"
         },
         "replacement": ".GetNoSeriesLine($1, $2, $3, false);"
@@ -665,7 +665,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.SetSeries\\((.+)\\)",
+          "pattern": "DISABLED 20260603      \\.SetSeries\\((.+)\\)",
           "flags": "g"
         },
         "replacement": ".GetNextNo($1)"
@@ -675,7 +675,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.TryGetNextNo\\((.+)\\)",
+          "pattern": "DISABLED 20260603      \\.TryGetNextNo\\((.+)\\)",
           "flags": "g"
         },
         "replacement": ".PeekNextNo($1)"
@@ -685,7 +685,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)",
+          "pattern": "DISABLED 20260603      \\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)",
           "flags": "g"
         },
         "replacement": ".LookupRelatedNoSeries($2, $1, $3)"
@@ -695,7 +695,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "(then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)",
+          "pattern": "DISABLED 20260603      (then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)",
           "flags": "gm"
         },
         "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
@@ -705,7 +705,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);",
+          "pattern": "DISABLED 20260603      ^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);",
           "flags": "gm"
         },
         "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
@@ -715,7 +715,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "DISABLED      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
+          "pattern": "DISABLED 20260603      ^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);",
           "flags": "g"
         },
         "replacement": "$1$2$8 := $4;\n$1$2if $3.AreRelated($4, $5) then\n$1$2$8 := $5;\n$1$2$7 := $3.GetNextNo($8);"
@@ -725,7 +725,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)",
+          "pattern": "DISABLED 20260603      \\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)",
           "flags": "gi"
         },
         "replacement": ".PeekNextNo($1, $2)"
@@ -735,7 +735,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)",
+          "pattern": "DISABLED 20260603      \\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)",
           "flags": "gi"
         },
         "replacement": ".PeekNextNo($1, $2)"
@@ -745,7 +745,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)",
+          "pattern": "DISABLED 20260603      \\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)",
           "flags": "gi"
         },
         "replacement": ".GetNextNo($1, $2, $3)"
@@ -755,7 +755,7 @@
         "name": "Codeunit NoSeriesManagement;",
         "type": "problem",
         "regex": {
-          "pattern": "\\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)",
+          "pattern": "DISABLED 20260603      \\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)",
           "flags": "gi"
         },
         "replacement": ".GetNextNo($1, $2, false)"

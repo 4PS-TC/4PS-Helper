@@ -530,31 +530,38 @@
         "replacements": [
           {
             "regex": "/[C|c]odeunit NoSeriesManagement;/g",
-            "replacement": "Codeunit \"No. Series\";"
+            "replacement": "Codeunit \"No. Series\";",
+            "disable": true
           },
           {
             "regex": "/\\.SetNoSeriesLineFilter\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\);/g",
-            "replacement": ".GetNoSeriesLine($1, $2, $3, false);"
+            "replacement": ".GetNoSeriesLine($1, $2, $3, false);",
+            "disable": true
           },
           {
             "regex": "/\\.SetSeries\\((.+)\\)/g",
-            "replacement": ".GetNextNo($1)"
+            "replacement": ".GetNextNo($1)",
+            "disable": true
           },
           {
             "regex": "/\\.TryGetNextNo\\((.+)\\)/g",
-            "replacement": ".PeekNextNo($1)"
+            "replacement": ".PeekNextNo($1)",
+            "disable": true
           },
           {
             "regex": "/\\.SelectSeries\\((.+),\\s*(.+),\\s*(.+)\\)/g",
-            "replacement": ".LookupRelatedNoSeries($2, $1, $3)"
+            "replacement": ".LookupRelatedNoSeries($2, $1, $3)",
+            "disable": true
           },
           {
             "regex": "/(then|else)\\s*(.*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\)/gm",
-            "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend"
+            "replacement": "$1 begin\n$7 := $3;\nif $2.AreRelated($3, $4) then\n$7 := $4;\n$6 := $2.GetNextNo($7);\nend",
+            "disable": true
           },
           {
             "regex": "/^(\\s+)([^\\/\\s]*).InitSeries\\(\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\s*\\);/gm",
-            "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);"
+            "replacement": "$1$7 := $3;\n$1if $2.AreRelated($3, $4) then\n$1    $7 := $4;\n$1$6 := $2.GetNextNo($7);",
+            "disable": true
           },
           {
             "regex": "/^(\\s*)((?:\\/\\/)*)(.*).InitSeries\\((.+),\\s*(.+),\\s*(.+),\\s*(.+),\\s*(.+)\\);/g",
@@ -563,19 +570,23 @@
           },
           {
             "regex": "/\\.DoGetNextNo\\((.+),\\s*(.+),\\s*false,\\s*(.+)\\)/gi",
-            "replacement": ".PeekNextNo($1, $2)"
+            "replacement": ".PeekNextNo($1, $2)",
+            "disable": true
           },
           {
             "regex": "/\\.GetNextNo\\((.+),\\s*(.+),\\s*false\\)/gi",
-            "replacement": ".PeekNextNo($1, $2)"
+            "replacement": ".PeekNextNo($1, $2)",
+            "disable": true
           },
           {
             "regex": "/\\.DoGetNextNo\\((.+),\\s*(.+),\\s*true,\\s*(.+)\\)/gi",
-            "replacement": ".GetNextNo($1, $2, $3)"
+            "replacement": ".GetNextNo($1, $2, $3)",
+            "disable": true
           },
           {
             "regex": "/\\.GetNextNo\\((.+),\\s*(.+),\\s*true\\)/gi",
-            "replacement": ".GetNextNo($1, $2, false)"
+            "replacement": ".GetNextNo($1, $2, false)",
+            "disable": true
           }
         ]
       },
