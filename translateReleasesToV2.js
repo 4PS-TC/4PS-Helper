@@ -38,12 +38,13 @@ function groupFixes(fixes) {
   const grouped = {};
 
   for (const fix of fixes) {
-    const key = `${fix.tc || ''}|${fix.name}|${fix.type}`;
+    const key = `${fix.tc || ''}|${fix.name}|${fix.type}|${fix.files || ''}`;
     if (!grouped[key]) {
       grouped[key] = {
         tc: fix.tc,
         name: fix.name,
         type: fix.type,
+        files: fix.files,
         replacements: [],
         appDependencies: []
       };
