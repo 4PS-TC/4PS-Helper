@@ -63,7 +63,7 @@
             "replacement": "DocumentPrint: Codeunit \"Document-Print\";"
           },
           {
-            "regex": "/^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)/gm",
+            "regex": "/^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n\\s*(?!DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)/gm",
             "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n",
             "netreplacement": "$1$2$1${3}4PS: Codeunit \"Document-Print 4PS\";\n"
           },
@@ -217,7 +217,7 @@
         "files": ".al",
         "replacements": [
           {
-            "regex": "/^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)/gm",
+            "regex": "/^(\\s*)((DimensionManagement):.*)\\r?\\n\\s*(?!DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)/gm",
             "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n",
             "netreplacement": "$1$2$1${3}4PS: Codeunit \"Dimension Management 4PS\";\n"
           },
@@ -226,7 +226,7 @@
             "replacement": "$1$2"
           },
           {
-            "regex": "/(DimensionManagement)\\.(MergeDefaultDim)\\(/g",
+            "regex": "/(DimensionManagement)\\.(MergeDefaultDim|GetDimValueRec)\\(/g",
             "replacement": "$14PS.$2(",
             "netreplacement": "${1}4PS.$2("
           }
@@ -384,7 +384,7 @@
         "files": ".al",
         "replacements": [
           {
-            "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)/gm",
+            "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n\\s*(?!FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)/gm",
             "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n",
             "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
             "disable": true
@@ -603,11 +603,15 @@
             "disable": true
           },
           {
-            "regex": "/^(?!\\n)(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\s*$/gm",
-            "replacement": "$1$2\n$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";"
+            "regex": "/^(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\r?\\n\\s*(?!MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\"\\r?\\n)/gm",
+            "replacement": "$1$2$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";\n"
           },
           {
-            "regex": "/^(?!\\n)(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$/gm",
+            "regex": "/^(\\s*)(MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\";\\r?\\n\\s*){2,}/gm",
+            "replacement": "$1$2"
+          },
+          {
+            "regex": "/^(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$/gm",
             "replacement": "$1MailManagementSubsState4PS.SetTempEmailAttachments(TempEmailAttachment, TempEmailItem);"
           }
         ]
@@ -680,7 +684,7 @@
         "files": ".al",
         "replacements": [
           {
-            "regex": "/^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
+            "regex": "/^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\((?!\\s*3021\\s*,)\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
             "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
           }
         ]

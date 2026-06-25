@@ -82,7 +82,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)",
+          "pattern": "^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n\\s*(?!DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)",
           "flags": "gm"
         },
         "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n"
@@ -302,7 +302,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)",
+          "pattern": "^(\\s*)((DimensionManagement):.*)\\r?\\n\\s*(?!DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)",
           "flags": "gm"
         },
         "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n"
@@ -324,7 +324,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "(DimensionManagement)\\.(MergeDefaultDim)\\(",
+          "pattern": "(DimensionManagement)\\.(MergeDefaultDim|GetDimValueRec)\\(",
           "flags": "g"
         },
         "replacement": "$14PS.$2("
@@ -517,7 +517,7 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "DISABLED ^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)",
+          "pattern": "DISABLED ^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n\\s*(?!FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)",
           "flags": "gm"
         },
         "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n"
@@ -835,10 +835,10 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\s*$",
+          "pattern": "^(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\r?\\n\\s*(?!MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\"\\r?\\n)",
           "flags": "gm"
         },
-        "replacement": "$1$2\n$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";"
+        "replacement": "$1$2$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";\n"
       },
       {
         "tc": "TC-4008",
@@ -846,7 +846,18 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "^(?!\\n)(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$",
+          "pattern": "^(\\s*)(MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\";\\r?\\n\\s*){2,}",
+          "flags": "gm"
+        },
+        "replacement": "$1$2"
+      },
+      {
+        "tc": "TC-4008",
+        "name": "Method 'SetTempEmailAttachments' is marked for removal. Reason: This procedure will be removed.. Tag: 24.0.",
+        "type": "problem",
+        "files": ".al",
+        "regex": {
+          "pattern": "^(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$",
           "flags": "gm"
         },
         "replacement": "$1MailManagementSubsState4PS.SetTempEmailAttachments(TempEmailAttachment, TempEmailItem);"
@@ -914,7 +925,7 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
+          "pattern": "^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\((?!\\s*3021\\s*,)\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)",
           "flags": "gm"
         },
         "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
