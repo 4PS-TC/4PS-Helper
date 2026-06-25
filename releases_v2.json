@@ -159,6 +159,18 @@
             "replacement": "$1"
           }
         ]
+      },
+      {
+        "tc": "TC-7052",
+        "name": "4PS Exchange Rates functionality is removed.",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "/VALExchRate\\s*:=\\s*StrSubstNo\\(\\s*Text009\\s*,\\s*CurrExchRate\\.\"Relat\\. Exch\\. Rate Amt Purchase\"\\s*,\\s*CurrExchRate\\.\"Exchange Rate Amount Purchase\"\\s*\\);/g",
+            "replacement": "VALExchRate := StrSubstNo(Text009, CurrExchRate.\"Relational Exch. Rate Amount\", CurrExchRate.\"Exchange Rate Amount\");"
+          }
+        ]
       }
     ]
   },
@@ -313,15 +325,18 @@
         "replacements": [
           {
             "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)/gm",
-            "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n"
+            "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n",
+            "disable": true
           },
           {
             "regex": "/^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";\\r?\\n\\s*){2,}/gm",
-            "replacement": "$1$2"
+            "replacement": "$1$2",
+            "disable": true
           },
           {
             "regex": "/(FormatAddr|FormatAddress)\\.(ContactVisitAddr|Address|PlotNo|OptionQuote|ExitOrderInv|ExitOrderSales|Project|ProjectLoc|ServOrder|ServOrderLoc|ServiceLocation|PlantLoc|PlantOrderToLoc|PlantOrderFromLoc|PlantTransportOrderToLoc|PlantTransportOrderFromLoc|PostedPlantTransportOrderToLoc|PostedPlantTranspOrderFromLoc|ExitOrderBillTo|ExitOrderShipTo|CompanyPostalAddr|GenericSalesHeaderBillTo|GenericSalesHeaderShipTo|HouseNo|SplitAddress|Plot)\\(/g",
-            "replacement": "$14PS.$2("
+            "replacement": "$14PS.$2(",
+            "disable": true
           }
         ]
       }
