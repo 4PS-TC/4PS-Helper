@@ -184,7 +184,29 @@
         "type": "error",
         "files": ".al",
         "regex": {
+          "pattern": "^(\\s*)KIXCode\\s*:\\s*array\\[3\\]\\s*of\\s*Code\\[20\\];\\r?\\n",
+          "flags": "gm"
+        },
+        "replacement": ""
+      },
+      {
+        "tc": "TC-6779",
+        "name": "TNT Post KIX Mgt. is deprecated",
+        "type": "error",
+        "files": ".al",
+        "regex": {
           "pattern": "^(\\s*)column\\s*\\(\\s*KIXCode\\s*;\\s*TNTPostKIXMgt\\s*\\.\\s*BuildKIXCode\\s*\\(\\s*\"Purchase\\s+Header\"\\s*\\.\\s*\"Pay-to\\s+Address\"\\s*,\\s*\"Purchase\\s+Header\"\\s*\\.\\s*\"Pay-to\\s+Post\\s+Code\"\\s*,\\s*\"Purchase\\s+Header\"\\s*\\.\\s*\"Pay-to\\s+Country\\/Region\\s+Code\"\\s*\\)\\s*\\)\\r?\\n\\s*\\{\\r?\\n\\s*\\}\\r?\\n",
+          "flags": "gm"
+        },
+        "replacement": ""
+      },
+      {
+        "tc": "TC-6779",
+        "name": "TNT Post KIX Mgt. is deprecated",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "^(\\s*)(KIXCode\\[(ColumnNo|i)\\][^;]*;)\\s*\\/\\/ \\*\\*4PS\\.n\\r?\\n",
           "flags": "gm"
         },
         "replacement": ""
