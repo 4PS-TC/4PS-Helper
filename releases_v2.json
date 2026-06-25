@@ -25,6 +25,10 @@
           {
             "regex": "/(\"INSBOU (Despatch Advice( (Line|Item|List))?|Maint\\. (Instruction|Status Setup|Status Mgt)|Maint\\. Instructions|Setup|Generic Functions|Process (Maint\\. Instr\\.|Despatch Advice))\")/g",
             "replacement": "$1"
+          },
+          {
+            "regex": "/RunPagesMgt\\s*:\\s*Codeunit\\s*\"Run Forms Mgt\\. \\(SMF\\)\";/g",
+            "replacement": "RunPagesMgt: Codeunit \"DICO Run Forms Mgt. (SMF)\";"
           }
         ],
         "appDependencies": [

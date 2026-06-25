@@ -36,6 +36,25 @@
         ]
       },
       {
+        "tc": "TC-6734",
+        "name": "DICO Interface dependency missing",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "RunPagesMgt\\s*:\\s*Codeunit\\s*\"Run Forms Mgt\\. \\(SMF\\)\";",
+          "flags": "g"
+        },
+        "replacement": "RunPagesMgt: Codeunit \"DICO Run Forms Mgt. (SMF)\";",
+        "appDependencies": [
+          {
+            "id": "635e676f-db3c-4cb7-a0dc-1074b24d5189",
+            "name": "4PS DICO Interface NL",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
+      },
+      {
         "tc": "TC-6668",
         "name": "Report Selections: No overload for method takes x arguments.",
         "type": "error",
