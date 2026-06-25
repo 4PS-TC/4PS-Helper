@@ -895,7 +895,7 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";",
+          "pattern": "DISABLED ^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";",
           "flags": "gm"
         },
         "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"

@@ -652,7 +652,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(.+)\\s*: [C|c]odeunit \"Document-Print\";/gm",
-            "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";"
+            "replacement": "$1$2: Codeunit \"Document-Print 4PS\";$1ReportSelections: Record \"Report Selections\";",
+            "disable": true
           }
         ]
       },
