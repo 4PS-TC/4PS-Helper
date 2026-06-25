@@ -55,8 +55,13 @@
         "files": ".al",
         "replacements": [
           {
+            "regex": "DocumentPrint:\\s*Codeunit\\s*\"Document-Print 4PS\";/g",
+            "replacement": "DocumentPrint: Codeunit \"Document-Print\";"
+          },
+          {
             "regex": "/^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)/gm",
-            "replacement": "$1$2$1${3}4PS: Codeunit \"Document-Print 4PS\";\n"
+            "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n",
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Document-Print 4PS\";\n"
           },
           {
             "regex": "/^(\\s*)(DocumentPrint4PS: Codeunit \"Document-Print 4PS\";\\r?\\n\\s*){2,}/gm",
@@ -64,7 +69,8 @@
           },
           {
             "regex": "/(DocumentPrint|DocPrint)\\.(GetPurchDocTypeUsage|EmailPurchHeader|SetFilterAndCalcPurchDiscAndPrintPurchHeader|DoPrintPurchHeader|CheckEMailToForPurchHeader|EmailPurchOrderReceipt|PrintPurchOrderReceipt|DoPrintPurchOrderReceipt|PrintBudget|EmailExtensionContract|PrintExtensionContract|DoPrintExtensionContract|PrintAdjustment|PrintOption|PrintPurchaseAction|PrintPurchaseRequisition|PrintProjAdvice|PrintProjCostPlus|PrintProjWorksheet|PrintProjDeliveryNote|PrintProjectElement|PrintPostedProjDeliveryNote|PrintAssemblyProjWorksheet|PrintCustWorksheet|PrintProgress|PrintPrognosis|EmailPlot|PrintPlot|DoPrintPlot|PrintHouseModel|EmailHoursByEmployee|PrintSummarySheet|PrintEstimateNEW|PrintEstimateRAW|PrintBidFormRAW|PrintBidFormCoverPageRAW|PrintTryOutVersionEstimate|PrintRelation|PrintProvWork|PrintServOrder|PrintServOrderTexts|PrintServContract|PrintServLocation|PrintServAdvice|PrintServCostPlus|EmailServiceOrderWorksheet|PrintServiceOrderWorksheet|DoPrintServiceOrderWorksheet|SaveSOAppointmentLettersAsExternalDocuments|SaveCollectInstallmentOverviewAsExternalDocuments|PrintUnitPriceServiceOrder|EmailUnitPriceProdRecording|PrintUnitPriceProdRecording|DoPrintUnitPriceProdRecording|PrintServCall|PrintGlazingServiceCall|EmailWorkOrderWorksheet|PrintWorkOrderWorksheet|DoPrintWorkOrderWorksheet|EmailSubcontractorServiceOrderList|DoPrintSubcontractorServiceOrderList|PrintItemJnl|PrintItemInvJnl|PrintInventoryMovement|PrintProjectDispatchNote|PrintPickingList|PrintWhseShipment|PrintPlantRequest|PrintDispatchNote|PrintPlantPickingList|PrintPlantReturnOrder|PrintPlantTransportOrder|PrintPostedPlantTransportOrder|PrintPlantTransportRideList|PrintPlantTransportRide|PrintExitOrder|PrintInvoiceProposal|PrintPlantRentalCorrection|PrintPlantInspection|PrintRentalFreeOrder|PrintPlantInventory|PrintPlantInventoryCourse|PrintDocW|PrintDocI|PrintSegmentLabel|PrintHours|PrintHoursProject|PrintPostedHoursList|PrintFrostOutRegistration|PrintFrostOutRequest|PrintBlanketScheme|PrintReqWksh|PrintPurchReminder|EmailOptionQuote|PrintOptionQuote|DoPrintOptionQuote|PrintProjectInstallments|PrintProjectControl|PrintProjectInventoryDelivery|PrintProjectInventory|PrintTenderParagraphbyPrinc|PrintInstallMotivation|PrintInstallOverview|PrintTryout|PrintTryoutQuote|PrintUnitPriceProdMot|PrintUnitPricePriceList|PrintUnitPrice|PrintPaymentHistory|PrintPaymentHistoryOverview|PrintProposalOverview|PrintSiteManHrAccProject|PrintSiteManHrAccEmployee|PrintSiteManHrAccExtByComp|PrintShippingOrder|PrintPostedShippingOrder|PrintJobLedger|EmailPostedShippingOrder|DoPrintPostedShippingOrder|PrintProjectResultForecast|PrintServiceCollectiveList|PrintSOAppointmentLetter|PrintSurvey|PrintSurveyLocation|PrintSurveyObject|PrintServiceContract_Object|PrintServiceContractControl|PrintProjectCollectiveList|PrintServiceObjectList|PrintFinalInstallmentDetails|PrintWorkOrder|PrintWorkOrders|PrintObjectFilterList|PrintPriceBookInstallmentOverview|PrintPriceBookCollectInstallmentOverview|GetReportSelectionForPrintUsage|GetReportSelectionForEmailAttachmentUsage|GetReportSelectionForPrintUsageVendor|GetReportSelectionForEmailAttachmentUsageVendor|GetDefaultReportSelectionForEmailAttachmentUsage|SaveAnyRecordReportAsPdfOnClient|SaveAnyRecordReportAsPdf|SaveAnyRecordReportAsPdf|PrintPurchQuoteThanksLetter|EmailPostedPurchReceipt|PrintPostedPurchReceipt|DoPrintPostedPurchReceipt|PrintPlantQuote|PrintProjectMaterialReqLine|EmailDocket|SaveDocketAsPdf|ComposeAttachmentFileNameForDocket|PrintGenericChecklist|GetFilteredChecklistCopiesBySource|IsWorkOrderBasedOn|EmailDeliveryReport|PrintDeliveryReport|DoPrintDeliveryReport|PrintHoursByEmployee|OnDoPrintPurchHeaderOnAfterSetEMailSubject|OnBeforeDoPrintServiceOrderWorksheet|OnBeforeDoPrintWorkOrderWorksheet)\\(/g",
-            "replacement": "${1}4PS.$2("
+            "replacement": "$14PS.$2(",
+            "netreplacement": "${1}4PS.$2("
           },
           {
             "regex": "/GetReportSelectionForPrintUsage\\((.+),\\s*(.+),\\s*(false|true),\\s*(.+)\\)/g",
@@ -325,7 +331,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)/gm",
-            "replacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
+            "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n",
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
             "disable": true
           },
           {
@@ -335,7 +342,8 @@
           },
           {
             "regex": "/(FormatAddr|FormatAddress)\\.(ContactVisitAddr|Address|PlotNo|OptionQuote|ExitOrderInv|ExitOrderSales|Project|ProjectLoc|ServOrder|ServOrderLoc|ServiceLocation|PlantLoc|PlantOrderToLoc|PlantOrderFromLoc|PlantTransportOrderToLoc|PlantTransportOrderFromLoc|PostedPlantTransportOrderToLoc|PostedPlantTranspOrderFromLoc|ExitOrderBillTo|ExitOrderShipTo|CompanyPostalAddr|GenericSalesHeaderBillTo|GenericSalesHeaderShipTo|HouseNo|SplitAddress|Plot)\\(/g",
-            "replacement": "${1}4PS.$2(",
+            "replacement": "$14PS.$2(",
+            "netreplacement": "${1}4PS.$2(",
             "disable": true
           }
         ]
