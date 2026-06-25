@@ -71,7 +71,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "DocumentPrint:\\s*Codeunit\\s*\"Document-Print 4PS\";/g",
+          "pattern": "DocumentPrint\\s*:\\s*Codeunit\\s*\"Document-Print\\s4PS\";",
           "flags": "g"
         },
         "replacement": "DocumentPrint: Codeunit \"Document-Print\";"
@@ -115,7 +115,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "GetReportSelectionForPrintUsage\\((.+),\\s*(.+),\\s*(false|true),\\s*(.+)\\)",
+          "pattern": "GetReportSelectionForPrintUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(false|true|UserInteractionAllowed)\\s*,\\s*(.+)\\s*\\)",
           "flags": "g"
         },
         "replacement": "GetReportSelectionForPrintUsage($1, $2, $4)"
