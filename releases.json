@@ -287,7 +287,7 @@
       },
       {
         "tc": "TC-7054",
-        "name": "No overload for method 'ExchangeAmtFCYToFCY' takes x arguments. ",
+        "name": "No overload for method 'ExchangeAmtFCYToFCY' takes x arguments.",
         "type": "error",
         "files": ".al",
         "regex": {
@@ -295,6 +295,39 @@
           "flags": "gm"
         },
         "replacement": "$1.ExchangeAmtFCYToFCY($2, $3, $4, $5, $6, $7, $8)"
+      },
+      {
+        "tc": "TC-7062",
+        "name": "Codeunit 'Dimension Management' is missing",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)",
+          "flags": "gm"
+        },
+        "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n"
+      },
+      {
+        "tc": "TC-7062",
+        "name": "Codeunit 'Dimension Management' is missing",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";\\r?\\n\\s*){2,}",
+          "flags": "gm"
+        },
+        "replacement": "$1$2"
+      },
+      {
+        "tc": "TC-7062",
+        "name": "Codeunit 'Dimension Management' is missing",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "(DimensionManagement)\\.(MergeDefaultDim)\\(",
+          "flags": "g"
+        },
+        "replacement": "$14PS.$2("
       }
     ]
   },
