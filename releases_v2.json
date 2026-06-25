@@ -217,12 +217,12 @@
         "files": ".al",
         "replacements": [
           {
-            "regex": "/^(\\s*)((DimensionManagement):.*)\\r?\\n\\s*(?!DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)/gm",
+            "regex": "/^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\")/gm",
             "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n",
-            "netreplacement": "$1$2\n$1${3}4PS: Codeunit \"Dimension Management 4PS\";\n"
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Dimension Management 4PS\";\n"
           },
           {
-            "regex": "/^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";\\r?\\n\\s*){2,}/gm",
+            "regex": "/^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";[\\r\\n\\s]*){2,}/gm",
             "replacement": "$1$2"
           },
           {
