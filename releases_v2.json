@@ -117,6 +117,14 @@
         "files": ".al",
         "replacements": [
           {
+            "regex": "/(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeRate\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:false|true)\\s*\\)\\s*,\\s*(?:false|true)\\s*\\)/gm",
+            "replacement": "$1.ExchangeAmt$2($3, $4, $5, $6.ExchangeRate($7, $8))"
+          },
+          {
+            "regex": "/(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeRate\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(?:FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:false|true)\\s*\\)\\s*\\)/gm",
+            "replacement": "$1.ExchangeRate($2, $3)"
+          },
+          {
             "regex": "/(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:.+?)\\s*\\)/gm",
             "replacement": "$1.ExchangeAmt$2($3, $4, $5, $6)"
           },

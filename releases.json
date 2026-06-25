@@ -159,6 +159,28 @@
         "type": "error",
         "files": ".al",
         "regex": {
+          "pattern": "(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeRate\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:false|true)\\s*\\)\\s*,\\s*(?:false|true)\\s*\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1.ExchangeAmt$2($3, $4, $5, $6.ExchangeRate($7, $8))"
+      },
+      {
+        "tc": "TC-6657",
+        "name": "CurrencyExchRate: No overload for method takes x arguments.",
+        "type": "error",
+        "files": ".al",
+        "regex": {
+          "pattern": "(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeRate\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(?:FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(?:false|true)\\s*\\)\\s*\\)",
+          "flags": "gm"
+        },
+        "replacement": "$1.ExchangeRate($2, $3)"
+      },
+      {
+        "tc": "TC-6657",
+        "name": "CurrencyExchRate: No overload for method takes x arguments.",
+        "type": "error",
+        "files": ".al",
+        "regex": {
           "pattern": "(CurrencyExchangeRateRec|CurrencyExchangeRate|CurrencyExchRate|CurrExchRate)\\.ExchangeAmt(FCYToLCY|LCYToFCY)\\(\\s*(?:.+?)\\s*,\\s*(?:.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(.+?)\\s*,\\s*(?:.+?)\\s*\\)",
           "flags": "gm"
         },
