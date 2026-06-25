@@ -82,10 +82,10 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n\\s*(?!DocumentPrint4PS: Codeunit \"Document-Print 4PS\"\\r?\\n)",
+          "pattern": "^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\")",
           "flags": "gm"
         },
-        "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n"
+        "replacement": "$1$2\n$1$34PS: Codeunit \"Document-Print 4PS\";\n"
       },
       {
         "tc": "TC-6660",
@@ -302,10 +302,10 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)((DimensionManagement):.*)\\r?\\n\\s*(?!DimensionManagement4PS: Codeunit \"Dimension Management 4PS\"\\r?\\n)",
+          "pattern": "^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\")",
           "flags": "gm"
         },
-        "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n"
+        "replacement": "$1$2\n$1$34PS: Codeunit \"Dimension Management 4PS\";\n"
       },
       {
         "tc": "TC-7062",
@@ -313,7 +313,7 @@
         "type": "error",
         "files": ".al",
         "regex": {
-          "pattern": "^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";\\r?\\n\\s*){2,}",
+          "pattern": "^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";[\\r\\n\\s]*){2,}",
           "flags": "gm"
         },
         "replacement": "$1$2"
@@ -517,10 +517,10 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "DISABLED ^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n\\s*(?!FormatAddr4PS: Codeunit \"Format Address 4PS\"\\r?\\n)",
+          "pattern": "DISABLED ^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\")",
           "flags": "gm"
         },
-        "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n"
+        "replacement": "$1$2\n$1$34PS: Codeunit \"Format Address 4PS\";\n"
       },
       {
         "tc": "TC-4633",
@@ -528,7 +528,7 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "DISABLED ^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";\\r?\\n\\s*){2,}",
+          "pattern": "DISABLED ^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";[\\r\\n\\s]*){2,}",
           "flags": "gm"
         },
         "replacement": "$1$2"
