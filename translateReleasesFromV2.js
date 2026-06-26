@@ -5,7 +5,7 @@ const inputFile = path.join(__dirname, 'releases_v2.json');
 const outputFile = path.join(__dirname, 'releases.json');
 
 function parseRegexString(regexStr) {
-  const match = regexStr.match(/^\/(.+)\/([gimsuvy]*)$/);
+  const match = regexStr.match(/^\/(.+?)\/([gimsuvy]*)$/);
   if (match) {
     return {
       pattern: match[1],
