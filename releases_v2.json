@@ -64,8 +64,8 @@
           },
           {
             "regex": "/^(\\s*)((DocumentPrint|DocPrint):.*)\\r?\\n(?!\\s*DocumentPrint4PS: Codeunit \"Document-Print 4PS\")/gm",
-            "replacement": "$1$2\n$1$34PS: Codeunit \"Document-Print 4PS\";\n",
-            "netreplacement": "$1$2\n$1${3}4PS: Codeunit \"Document-Print 4PS\";\n"
+            "replacement": "$1$2$1$34PS: Codeunit \"Document-Print 4PS\";\n",
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Document-Print 4PS\";\n"
           },
           {
             "regex": "/^(\\s*)(DocumentPrint4PS: Codeunit \"Document-Print 4PS\";\\r?\\n\\s*){2,}/gm",
@@ -218,8 +218,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)((DimensionManagement):.*)\\r?\\n(?!\\s*DimensionManagement4PS: Codeunit \"Dimension Management 4PS\")/gm",
-            "replacement": "$1$2\n$1$34PS: Codeunit \"Dimension Management 4PS\";\n",
-            "netreplacement": "$1$2\n$1${3}4PS: Codeunit \"Dimension Management 4PS\";\n"
+            "replacement": "$1$2$1$34PS: Codeunit \"Dimension Management 4PS\";\n",
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Dimension Management 4PS\";\n"
           },
           {
             "regex": "/^(\\s*)(DimensionManagement4PS: Codeunit \"Dimension Management 4PS\";[\\r\\n\\s]*){2,}/gm",
@@ -385,8 +385,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\")/gm",
-            "replacement": "$1$2\n$1$34PS: Codeunit \"Format Address 4PS\";\n",
-            "netreplacement": "$1$2\n$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
+            "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n",
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
             "disable": true
           },
           {
