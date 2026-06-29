@@ -1054,7 +1054,8 @@
         "replacements": [
           {
             "regex": "/(\\.Release)(?:\\(\\))*(?![\\w\\d])/g",
-            "replacement": ".Release(false)"
+            "replacement": ".Release(false)",
+            "disable": true
           }
         ]
       },

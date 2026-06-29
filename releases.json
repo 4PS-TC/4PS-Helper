@@ -1393,7 +1393,7 @@
         "type": "problem",
         "files": ".al",
         "regex": {
-          "pattern": "(\\.Release)(?:\\(\\))*(?![\\w\\d])",
+          "pattern": "DISABLED (\\.Release)(?:\\(\\))*(?![\\w\\d])",
           "flags": "g"
         },
         "replacement": ".Release(false)"
