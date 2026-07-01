@@ -252,27 +252,86 @@
         "replacements": [
           {
             "regex": "/^[ \\t]*field\\(\"Proj\\. Plann\\. Base Activ\\. Code\";\\s*Rec\\.\"Proj\\. Plann\\. Base Activ\\. Code\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/^[ \\t]*field\\(\"Allowed in Eng\\. Estimate\";\\s*Rec\\.\"Allowed in Eng\\. Estimate\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/^[ \\t]*field\\(\"Surcharge in Eng\\. Cost Price\";\\s*Rec\\.\"Surcharge in Eng\\. Cost Price\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/^[ \\t]*field\\(\"Hour Rate Code Engineering\";\\s*Rec\\.\"Hour Rate Code Engineering\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/^[ \\t]*field\\(\"Serial No\\.\";\\s*Rec\\.\"Serial No\\.\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/^[ \\t]*field\\(\"Base Calendar Code\";\\s*Rec\\.\"Base Calendar Code\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
+          }
+        ]
+      },
+      {
+        "tc": "TC-7082",
+        "name": "Field x is removed. Reason: ICM functionality will be removed.. Tag: 26.0.",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "/^[ \\t]*field\\(\"ICM Login Code\";\\s*Rec\\.\"ICM Login Code\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"Directory EICB\";\\s*Rec\\.\"Directory EICB\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"Directory ICB\";\\s*Rec\\.\"Directory ICB\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"Pathname Purchase Exchange\";\\s*Rec\\.\"Pathname Purchase Exchange\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"Directory Backup ICB\";\\s*Rec\\.\"Directory Backup ICB\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"Directory Backup EICB\";\\s*Rec\\.\"Directory Backup EICB\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"URL GS1 Trial Order\";\\s*Rec\\.\"URL GS1 Trial Order\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"URL GS1 Purchase Order\";\\s*Rec\\.\"URL GS1 Purchase Order\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
+          },
+          {
+            "regex": "/^[ \\t]*field\\(\"GS1 Change Request implemented\";\\s*Rec\\.\"GS1 Change Request implemented\"\\)\\r?\\n[ \\t]*\\{\\r?\\n[ \\t]*\\}\\r?\\n/gm",
+            "replacement": "",
+            "disable": true
           }
         ]
       }
