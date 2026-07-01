@@ -492,7 +492,7 @@
             "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n"
           },
           {
-            "regex": "/^(\\s*)(FormatAddr4PS: Codeunit \"Format Address 4PS\";[\\r\\n\\s]*){2,}/gm",
+            "regex": "/^(\\s*)((?:FormatAddr|FormatAddress)4PS: Codeunit \"Format Address 4PS\";[\\r\\n\\s]*){2,}/gm",
             "replacement": "$1$2"
           },
           {
