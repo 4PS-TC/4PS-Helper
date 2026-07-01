@@ -231,6 +231,18 @@
             "netreplacement": "${1}4PS.$2("
           }
         ]
+      },
+      {
+        "tc": "TC-7071",
+        "name": "Vendor: field \"Direct Post Order ICM\" is removed",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "/^\\s{4}procedure\\sDirectPosting\\(\\)\\r?\\n[\\s\\S]*?^\\s{4}end;/gm",
+            "replacement": "    procedure DirectPosting()\n    begin\n        \"Purchase Header\".DirectPosting();\n    end;"
+          }
+        ]
       }
     ]
   },
