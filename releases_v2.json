@@ -576,7 +576,8 @@
         "replacements": [
           {
             "regex": "/^\\s*(#if|#else|#pragma|#endif).*\\s*?[\\r\\n]*/gm",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           }
         ]
       },
@@ -1177,7 +1178,8 @@
         "replacements": [
           {
             "regex": "/(#if not (?:CLEAN24|FPS_IMC_CLEAN23|FPS_PER_CLEAN23|FPS_DPP_CLEAN23|FPS_PAM_CLEAN23|FPS_VER_CLEAN23)\\s*#pragma warning disable AL0432\\s*){2,}/gm",
-            "replacement": "$1\n"
+            "replacement": "$1\n",
+            "disable": true
           }
         ]
       },
@@ -1188,11 +1190,13 @@
         "replacements": [
           {
             "regex": "/(#pragma warning restore AL0432\\s*#endif\\s*){2,}/gm",
-            "replacement": "$1"
+            "replacement": "$1",
+            "disable": true
           },
           {
             "regex": "/(#pragma warning disable AL0432)\\n\\s*\\n+/gm",
-            "replacement": "$1\n"
+            "replacement": "$1\n",
+            "disable": true
           }
         ]
       }
