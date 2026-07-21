@@ -334,6 +334,18 @@
             "disable": true
           }
         ]
+      },
+      {
+        "tc": "TC-7205",
+        "name": "Generic Sales Line Type fix for Generic Sales Document",
+        "type": "error",
+        "files": ".rdl|.rdlc",
+        "replacements": [
+          {
+            "regex": "/<Hidden>=Not\\s+Fields!PlantInvoice_GenericSalesHeader\\.Value\\s+Or\\s+Fields!Type_GenericSalesLine\\.Value\\s*&lt;&gt;\\s*\"1\"<\\/Hidden>/gm",
+            "replacement": "<Hidden>=Not Fields!PlantInvoice_GenericSalesHeader.Value Or Fields!Type_GenericSalesLine.Value = \"0\"</Hidden>"
+          }
+        ]
       }
     ]
   },
