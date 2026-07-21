@@ -431,11 +431,13 @@
         "replacements": [
           {
             "regex": "/Option\\s*None,\"1\",\"1000\",\"1000000\"/g",
-            "replacement": "Enum \"PRJ Round Factor 4PS\""
+            "replacement": "Enum \"PRJ Round Factor 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\\s+OptionCaption\\s*=\\s*'None,1,1000,1000000';/g",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           }
         ]
       },
@@ -447,23 +449,28 @@
         "replacements": [
           {
             "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)/g",
-            "replacement": "$1.Day()"
+            "replacement": "$1.Day()",
+            "disable": true
           },
           {
             "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)/g",
-            "replacement": "$1.Month()"
+            "replacement": "$1.Month()",
+            "disable": true
           },
           {
             "regex": "/Date2DMY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)/g",
-            "replacement": "$1.Year()"
+            "replacement": "$1.Year()",
+            "disable": true
           },
           {
             "regex": "/Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*1\\s*\\)/g",
-            "replacement": "$1.DayOfWeek()"
+            "replacement": "$1.DayOfWeek()",
+            "disable": true
           },
           {
             "regex": "/Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*2\\s*\\)/g",
-            "replacement": "$1.WeekNo()"
+            "replacement": "$1.WeekNo()",
+            "disable": true
           },
           {
             "regex": "/- Date2DWY\\(\\s*([^()]*\\([^()]*\\)[^,]*|[^,]+)\\s*,\\s*3\\s*\\)/g",
@@ -480,7 +487,8 @@
         "replacements": [
           {
             "regex": "/^(?!\\n)(\\s*)(.+)(\"(?:Debrief Logbook \\(4PS-Mobile\\)|Debrief Work Order Texts \\(Mob\\)|Debrief Text \\(Mobile\\)|Debrief Cost Plus Entry \\(Mob\\.\\)|Field Service App Setup|Mandatory Fld\\. Exp\\. WO \\(FSA\\)|Debrief Serv\\. Ord\\. Obj\\. \\(Mob\\.\\)|Mobile Decentral Object|Debrief Work Order \\(Mobile\\)|Debrief Hour Accounting \\(Mob\\.\\)|4PS-Mobile Setup|Mobile Item Usage)\")(.+)(\\s*)$/gm",
-            "replacement": "$1$2$3$4$5"
+            "replacement": "$1$2$3$4$5",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -501,16 +509,19 @@
           {
             "regex": "/^(\\s*)((FormatAddr|FormatAddress):.*)\\r?\\n(?!\\s*FormatAddr4PS: Codeunit \"Format Address 4PS\")/gm",
             "replacement": "$1$2$1$34PS: Codeunit \"Format Address 4PS\";\n",
-            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n"
+            "netreplacement": "$1$2$1${3}4PS: Codeunit \"Format Address 4PS\";\n",
+            "disable": true
           },
           {
             "regex": "/^(\\s*)((?:FormatAddr|FormatAddress)4PS: Codeunit \"Format Address 4PS\";[\\r\\n\\s]*){2,}/gm",
-            "replacement": "$1$2"
+            "replacement": "$1$2",
+            "disable": true
           },
           {
             "regex": "/(FormatAddr|FormatAddress)\\.(ContactVisitAddr|Address|PlotNo|OptionQuote|ExitOrderInv|ExitOrderSales|Project|ProjectLoc|ServOrder|ServOrderLoc|ServiceLocation|PlantLoc|PlantOrderToLoc|PlantOrderFromLoc|PlantTransportOrderToLoc|PlantTransportOrderFromLoc|PostedPlantTransportOrderToLoc|PostedPlantTranspOrderFromLoc|ExitOrderBillTo|ExitOrderShipTo|CompanyPostalAddr|GenericSalesHeaderBillTo|GenericSalesHeaderShipTo|HouseNo|SplitAddress|Plot)\\(/g",
             "replacement": "$14PS.$2(",
-            "netreplacement": "${1}4PS.$2("
+            "netreplacement": "${1}4PS.$2(",
+            "disable": true
           }
         ]
       }
@@ -541,11 +552,13 @@
         "replacements": [
           {
             "regex": "/\"QA Deviation List\"/g",
-            "replacement": "\"QAF QA Deviation List 4PS\""
+            "replacement": "\"QAF QA Deviation List 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\"Accident List\"/g",
-            "replacement": "\"QAF Accident List 4PS\""
+            "replacement": "\"QAF Accident List 4PS\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -565,7 +578,8 @@
         "replacements": [
           {
             "regex": "/Record\\s*\"Conversion Comment\";/g",
-            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion Comment\";"
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion Comment\";",
+            "disable": true
           }
         ]
       },
@@ -577,7 +591,8 @@
         "replacements": [
           {
             "regex": "/EstSummaryCombType4PS\\s*:=\\s*PrintTotalsBasedOn\\s*\\+\\s*1;/g",
-            "replacement": "EstSummaryCombType4PS := Enum::\"Est. Summary Comb. Type 4PS\".FromInteger(PrintTotalsBasedOn + 1);"
+            "replacement": "EstSummaryCombType4PS := Enum::\"Est. Summary Comb. Type 4PS\".FromInteger(PrintTotalsBasedOn + 1);",
+            "disable": true
           }
         ]
       },
@@ -627,7 +642,8 @@
         "replacements": [
           {
             "regex": "/\"Vendor Assessment Line\"/g",
-            "replacement": "\"VER Vendor Assessment Line 4PS\""
+            "replacement": "\"VER Vendor Assessment Line 4PS\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -647,11 +663,13 @@
         "replacements": [
           {
             "regex": "/Codeunit \"Prognosis Management\"/g",
-            "replacement": "Codeunit \"PER Prognosis Management 4PS\""
+            "replacement": "Codeunit \"PER Prognosis Management 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\"Select For Reporting\"/g",
-            "replacement": "\"PER Select For Reporting 4PS\""
+            "replacement": "\"PER Select For Reporting 4PS\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -671,23 +689,28 @@
         "replacements": [
           {
             "regex": "/Record \"Conversion File Format\"/g",
-            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion File Format\""
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion File Format\"",
+            "disable": true
           },
           {
             "regex": "/Record \"Conversion XMLPort 4PS\"/g",
-            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion XMLPort 4PS\""
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ConversionXmlPorts.\"Conversion XMLPort 4PS\"",
+            "disable": true
           },
           {
             "regex": "/Record \"Implementation Portal Company\"/g",
-            "replacement": "Record Fps.BaseApplication.ImplementationControl.ImplPortal.\"Implementation Portal Company\""
+            "replacement": "Record Fps.BaseApplication.ImplementationControl.ImplPortal.\"Implementation Portal Company\"",
+            "disable": true
           },
           {
             "regex": "/Codeunit ConversionMgt/g",
-            "replacement": "Codeunit \"Conversion Mgt.\""
+            "replacement": "Codeunit \"Conversion Mgt.\"",
+            "disable": true
           },
           {
             "regex": "/Record \"XML Migration Table\"/g",
-            "replacement": "Record  Fps.BaseApplication.ImplementationControl.ImplCompany.\"XML Migration Table\""
+            "replacement": "Record  Fps.BaseApplication.ImplementationControl.ImplCompany.\"XML Migration Table\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -717,15 +740,18 @@
           },
           {
             "regex": "/^(\\s*)(TempEmailItem: Record \"Email Item\" temporary;)\\r?\\n\\s*(?!MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\"\\r?\\n)/gm",
-            "replacement": "$1$2$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";\n"
+            "replacement": "$1$2$1MailManagementSubsState4PS: Codeunit \"Mail Management Subs.State 4PS\";\n",
+            "disable": true
           },
           {
             "regex": "/^(\\s*)(MailManagementSubsState4PS: Codeunit \"Mail Management Subs\\.State 4PS\";\\r?\\n\\s*){2,}/gm",
-            "replacement": "$1$2"
+            "replacement": "$1$2",
+            "disable": true
           },
           {
             "regex": "/^(\\s*)(TempEmailItem\\.SetTempEmailAttachments\\(TempEmailAttachment\\);)\\s*$/gm",
-            "replacement": "$1MailManagementSubsState4PS.SetTempEmailAttachments(TempEmailAttachment, TempEmailItem);"
+            "replacement": "$1MailManagementSubsState4PS.SetTempEmailAttachments(TempEmailAttachment, TempEmailItem);",
+            "disable": true
           }
         ]
       }
@@ -754,7 +780,8 @@
         "replacements": [
           {
             "regex": "/[C|c]odeunit \"Document-Mailing\"/g",
-            "replacement": "Codeunit \"Document Mailing\""
+            "replacement": "Codeunit \"Document Mailing\"",
+            "disable": true
           }
         ]
       },
@@ -777,7 +804,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintBlanketScheme\\((.+)\\)/gm",
-            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)",
+            "disable": true
           }
         ]
       },
@@ -788,7 +816,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).GetReportSelectionForEmailAttachmentUsage\\(\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
-            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)"
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Purchase - Blanket Scheme\", $2)",
+            "disable": true
           }
         ]
       },
@@ -799,7 +828,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).SaveSOAppointmentLettersAsExternalDocuments\\((?!\\s*3021\\s*,)\\s*(.+)\\s*,\\s*(.+)\\s*,\\s*(.+)\\s*\\)/gm",
-            "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)"
+            "replacement": "$1ReportSelections.SaveSOAppointmentLettersAsExternalDocuments(3021, $2, $3, $4)",
+            "disable": true
           }
         ]
       },
@@ -810,7 +840,8 @@
         "replacements": [
           {
             "regex": "/^\\s*(?:.+).PrintPlantInventoryCourse\\((.+)\\)/gm",
-            "replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)"
+            "replacement": "$1ReportSelections.PrintPlantInventoryCourse(\"Report Selection Usage\"::\"Plant - Inventory Course\", $2)",
+            "disable": true
           }
         ]
       },
@@ -821,7 +852,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintServContract\\((.+)\\)/gm",
-            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)"
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Contract\", $2)",
+            "disable": true
           }
         ]
       },
@@ -832,7 +864,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintServOrder\\((.+)\\)/gm",
-            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)"
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"SM.Order\", $2)",
+            "disable": true
           }
         ]
       },
@@ -843,7 +876,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintServOrderTexts\\((.+)\\)/gm",
-            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+            "replacement": "$1$2.SetRange(\"No.\", $2.\"No.\");\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)",
+            "disable": true
           }
         ]
       },
@@ -854,7 +888,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintSurvey\\((.+)\\)/gm",
-            "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)"
+            "replacement": "$1$2.SetRecFilter;\n$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Service - Order Texts\", $2)",
+            "disable": true
           }
         ]
       },
@@ -865,7 +900,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintProjectInstallments\\((.+)\\)/gm",
-            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Installments\", $2)"
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Installments\", $2)",
+            "disable": true
           }
         ]
       },
@@ -876,7 +912,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintProjectControl\\((.+)\\)/gm",
-            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Control\", $2)"
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Project - Project Control\", $2)",
+            "disable": true
           }
         ]
       },
@@ -887,7 +924,8 @@
         "replacements": [
           {
             "regex": "/^(\\s*)(?:.+).PrintPlantInventory\\((.+)\\)/gm",
-            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Plant - Inventory\", $2)"
+            "replacement": "$1ReportSelections.PrintReport(\"Report Selection Usage\"::\"Plant - Inventory\", $2)",
+            "disable": true
           }
         ]
       },
@@ -1072,7 +1110,8 @@
         "replacements": [
           {
             "regex": "/([\\w]+)\\.GetAddressPosition\\(\\s*(.+)\\.Address,\\s*.+,\\s*(.+),\\s*(.+)\\s*\\)/gm",
-            "replacement": "$1.GetAddressPosition($2.Address, $2.City, $2.\"Post Code\", $2.\"Country/Region Code\", $3, $4)"
+            "replacement": "$1.GetAddressPosition($2.Address, $2.City, $2.\"Post Code\", $2.\"Country/Region Code\", $3, $4)",
+            "disable": true
           }
         ]
       },
@@ -1083,7 +1122,8 @@
         "replacements": [
           {
             "regex": "/::\"E-Plan\"/g",
-            "replacement": "::\"E-Plan\""
+            "replacement": "::\"E-Plan\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -1102,19 +1142,23 @@
         "replacements": [
           {
             "regex": "/\\.\"(Company No\\. Paymaster|Default Cost Component)\"/g",
-            "replacement": ".\"$1 4PS\""
+            "replacement": ".\"$1 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\\.\"Administration No\\. Paymaster\"/g",
-            "replacement": ".\"Admin. No. Paymaster 4PS\""
+            "replacement": ".\"Admin. No. Paymaster 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\\.\"(UAR Task|UAR Task Description|UAR Task Pause Allowed)\"/g",
-            "replacement": ".\"$1 4PS\""
+            "replacement": ".\"$1 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\\.\"UAR Task Travel Hours Allowed\"/g",
-            "replacement": ".\"UAR Task Trav. Hrs. Allow. 4PS\""
+            "replacement": ".\"UAR Task Trav. Hrs. Allow. 4PS\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -1133,11 +1177,13 @@
         "replacements": [
           {
             "regex": "/\"Barcode Hour Accounting Setup\"/g",
-            "replacement": "\"HRH Barcode Hr. Acc. Setup 4PS\""
+            "replacement": "\"HRH Barcode Hr. Acc. Setup 4PS\"",
+            "disable": true
           },
           {
             "regex": "/\"Barcode Hour Accounting\"/g",
-            "replacement": "\"HRH Barcode Hour Acc. 4PS\""
+            "replacement": "\"HRH Barcode Hour Acc. 4PS\"",
+            "disable": true
           }
         ],
         "appDependencies": [
@@ -1156,7 +1202,8 @@
         "replacements": [
           {
             "regex": "/ElemCostObjectControlRec\\.CalculateAllowedAndPrevious\\((.+)\\);/g",
-            "replacement": "ElemCostObjectControlRec.CalculateAllowedAndPrevious($1, false);"
+            "replacement": "ElemCostObjectControlRec.CalculateAllowedAndPrevious($1, false);",
+            "disable": true
           }
         ]
       },
@@ -1179,7 +1226,8 @@
         "replacements": [
           {
             "regex": "/([\\w]+)\\.GetDescription\\((.+?)\\);/gm",
-            "replacement": "$1.GetDescriptionText($2);"
+            "replacement": "$1.GetDescriptionText($2);",
+            "disable": true
           }
         ]
       },
@@ -1271,7 +1319,8 @@
         "replacements": [
           {
             "regex": "/EstimateLineTotal\\.DetermineSurchRcpLine.+?, SummarySheet\\);/g",
-            "replacement": "EstimateLineTotal.DetermineSurchRcpLine(\"Estimate Recipe Line\", SummarySheet, PrintTotalsBasedOn);"
+            "replacement": "EstimateLineTotal.DetermineSurchRcpLine(\"Estimate Recipe Line\", SummarySheet, PrintTotalsBasedOn);",
+            "disable": true
           }
         ]
       },
@@ -1282,7 +1331,8 @@
         "replacements": [
           {
             "regex": "/EstimateLineTotal\\.SummaryLineInFilter\\(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\"\\.Amount, \"Summary Sheet Line\"\\.Hours, TotSurchargeAmount, TotSurchargeHours\\);/g",
-            "replacement": "EstimateLineTotal.SummaryLineInFilter(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\".Amount, \"Summary Sheet Line\".Hours, \"Summary Sheet Line\".\"Summary Line Type\".AsInteger(), TotSurchargeAmount, TotSurchargeHours);"
+            "replacement": "EstimateLineTotal.SummaryLineInFilter(SummarySheet, \"Summary Sheet Line\", 0, \"Summary Sheet Line\".Amount, \"Summary Sheet Line\".Hours, \"Summary Sheet Line\".\"Summary Line Type\".AsInteger(), TotSurchargeAmount, TotSurchargeHours);",
+            "disable": true
           }
         ]
       },
@@ -1293,11 +1343,13 @@
         "replacements": [
           {
             "regex": "/Page::\"Summary Sheet List\"/g",
-            "replacement": "Page::\"Summary Sheets\""
+            "replacement": "Page::\"Summary Sheets\"",
+            "disable": true
           },
           {
             "regex": "/PAGE::\"Summary Sheet List\"/g",
-            "replacement": "Page::\"Summary Sheets\""
+            "replacement": "Page::\"Summary Sheets\"",
+            "disable": true
           }
         ]
       },
@@ -1308,7 +1360,8 @@
         "replacements": [
           {
             "regex": "/Rec\\.LookupBuyFromVendor4PS\\(xRec\\)/g",
-            "replacement": "Rec.LookupBuyFromVendor4PS(xRec, Rec.\"Buy-from Vendor Name\")"
+            "replacement": "Rec.LookupBuyFromVendor4PS(xRec, Rec.\"Buy-from Vendor Name\")",
+            "disable": true
           }
         ]
       },
@@ -1319,7 +1372,8 @@
         "replacements": [
           {
             "regex": "/\\.FindSet\\((true|false), (true|false)\\)/gi",
-            "replacement": ".FindSet($1)"
+            "replacement": ".FindSet($1)",
+            "disable": true
           }
         ]
       },
@@ -1330,111 +1384,138 @@
         "replacements": [
           {
             "regex": "/FindInteractTmplCode\\(0\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\" \")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\" \")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(1\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Qte.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Qte.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(2\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Blnkt. Ord\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Blnkt. Ord\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(3\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Ord. Cnfrmn.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Ord. Cnfrmn.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(4\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Inv.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Inv.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(5\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Shpt. Note\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Shpt. Note\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(6\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Cr. Memo\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Cr. Memo\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(7\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Stmnt.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Stmnt.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(8\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Rmdr.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Rmdr.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(9\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Create\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Create\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(10\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Post\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Serv. Ord. Post\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(11\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch.Qte.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch.Qte.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(12\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Blnkt. Ord.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Blnkt. Ord.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(13\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Ord.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Ord.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(14\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Inv.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Inv.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(15\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Rcpt.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Rcpt.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(16\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Cr. Memo\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Cr. Memo\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(17\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Cover Sheet\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Cover Sheet\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(18\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Order\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Order\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(19\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Finance Charge Memo\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Finance Charge Memo\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(20\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Receipt\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Return Receipt\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(21\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Shipment\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Shipment\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(22\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Ord. Cnfrmn.\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Purch. Return Ord. Cnfrmn.\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(23\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(24\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract Quote\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Contract Quote\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(25\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Quote\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Service Quote\")",
+            "disable": true
           },
           {
             "regex": "/FindInteractTmplCode\\(26\\)/g",
-            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Draft Invoice\")"
+            "replacement": "FindInteractionTemplateCode(\"Interaction Log Entry Document Type\"::\"Sales Draft Invoice\")",
+            "disable": true
           }
         ]
       },
@@ -1445,7 +1526,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.\"Cross-Reference No.\"\\)/g",
-            "replacement": "; Rec.\"Item Reference No.\")"
+            "replacement": "; Rec.\"Item Reference No.\")",
+            "disable": true
           }
         ]
       },
@@ -1456,7 +1538,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.\"Unit of Measure \\(Cross Ref.\\)\"\\)/g",
-            "replacement": "; Rec.\"Item Reference Unit of Measure\")"
+            "replacement": "; Rec.\"Item Reference Unit of Measure\")",
+            "disable": true
           }
         ]
       },
@@ -1467,7 +1550,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.\"Cross-Reference Type\"\\)/g",
-            "replacement": "; Rec.\"Item Reference Type\")"
+            "replacement": "; Rec.\"Item Reference Type\")",
+            "disable": true
           }
         ]
       },
@@ -1478,7 +1562,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.\"Cross-Reference Type No.\"\\)/g",
-            "replacement": "; Rec.\"Item Reference Type No.\")"
+            "replacement": "; Rec.\"Item Reference Type No.\")",
+            "disable": true
           }
         ]
       },
@@ -1489,7 +1574,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.Id\\)/g",
-            "replacement": "; Rec.SystemId)"
+            "replacement": "; Rec.SystemId)",
+            "disable": true
           }
         ]
       },
@@ -1500,7 +1586,8 @@
         "replacements": [
           {
             "regex": "/; Rec\\.\"Coupled to CRM\"\\)/g",
-            "replacement": "; Rec.\"Coupled to Dataverse\")"
+            "replacement": "; Rec.\"Coupled to Dataverse\")",
+            "disable": true
           }
         ]
       },
@@ -1511,7 +1598,8 @@
         "replacements": [
           {
             "regex": "/\\[InDataSet\\][\\r\\n\\s]+/g",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           }
         ]
       }
@@ -1591,7 +1679,8 @@
         "replacements": [
           {
             "regex": "/EstimateLineTotal\\.CalculateOfferPrice\\(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn\\);/g",
-            "replacement": "EstimateLineTotal.CalculateOfferPrice(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn, ApplyLastCalcSurchFactor);"
+            "replacement": "EstimateLineTotal.CalculateOfferPrice(Estimate, SummarySheet, \"Estimate Line\", PrintTotalsBasedOn, ApplyLastCalcSurchFactor);",
+            "disable": true
           }
         ]
       },
@@ -1602,7 +1691,8 @@
         "replacements": [
           {
             "regex": "/Language: Record Language;/g",
-            "replacement": "Language: Codeunit Language;"
+            "replacement": "Language: Codeunit Language;",
+            "disable": true
           }
         ]
       },
@@ -1613,7 +1703,8 @@
         "replacements": [
           {
             "regex": "/CurrReport\\.Language := Language\\.GetLanguageID\\(\"Language Code\"\\);/g",
-            "replacement": "CurrReport.Language := Language.GetLanguageIdOrDefault(\"Language Code\");"
+            "replacement": "CurrReport.Language := Language.GetLanguageIdOrDefault(\"Language Code\");",
+            "disable": true
           }
         ]
       },
@@ -1624,7 +1715,8 @@
         "replacements": [
           {
             "regex": "/[Jj]ob[Rr]ec\\.Address/g",
-            "replacement": "JobRec.\"Bill-to Address\""
+            "replacement": "JobRec.\"Bill-to Address\"",
+            "disable": true
           }
         ]
       },
@@ -1635,11 +1727,13 @@
         "replacements": [
           {
             "regex": "/DetermineProgressDate\\.DetermineBothDates\\(Job\\);/g",
-            "replacement": "DetermineProgressDate.DetermineBothDates(Job,true);"
+            "replacement": "DetermineProgressDate.DetermineBothDates(Job,true);",
+            "disable": true
           },
           {
             "regex": "/SearchProgrDate\\.DetermineDate\\(Job\\);/g",
-            "replacement": "SearchProgrDate.DetermineDate(Job,true);"
+            "replacement": "SearchProgrDate.DetermineDate(Job,true);",
+            "disable": true
           }
         ]
       },
@@ -1650,11 +1744,13 @@
         "replacements": [
           {
             "regex": "/EmployeeRec\\.Picture/g",
-            "replacement": "EmployeeRec.Image"
+            "replacement": "EmployeeRec.Image",
+            "disable": true
           },
           {
             "regex": "/EmployeeRec\\.CalcFields\\(Picture\\)/g",
-            "replacement": "EmployeeRec.CalcFields(Image)"
+            "replacement": "EmployeeRec.CalcFields(Image)",
+            "disable": true
           }
         ]
       },
@@ -1665,7 +1761,8 @@
         "replacements": [
           {
             "regex": "/\"Archive Quotes and Orders\"/g",
-            "replacement": "\"Archive Orders\""
+            "replacement": "\"Archive Orders\"",
+            "disable": true
           }
         ]
       },
@@ -1676,7 +1773,8 @@
         "replacements": [
           {
             "regex": "/BuildInvLineBuffer2/g",
-            "replacement": "BuildInvLineBuffer"
+            "replacement": "BuildInvLineBuffer",
+            "disable": true
           }
         ]
       },
@@ -1687,11 +1785,13 @@
         "replacements": [
           {
             "regex": "/CurrReport\\.PageNo := 1;/g",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           },
           {
             "regex": "/StrSubstNo\\(Text005, Format\\(CurrReport.PageNo\\)\\)/g",
-            "replacement": "''"
+            "replacement": "''",
+            "disable": true
           }
         ]
       },
@@ -1714,7 +1814,8 @@
         "replacements": [
           {
             "regex": "/CurrReport.CreateTotals\\(.{0,250}\\);/g",
-            "replacement": ""
+            "replacement": "",
+            "disable": true
           }
         ]
       },
@@ -1725,7 +1826,8 @@
         "replacements": [
           {
             "regex": "/PeriodType: Option Day,Week,Month,Quarter,Year,\"Accounting Period\";/g",
-            "replacement": "PeriodType: Enum \"Analysis Period Type\";"
+            "replacement": "PeriodType: Enum \"Analysis Period Type\";",
+            "disable": true
           }
         ]
       },
@@ -1736,7 +1838,8 @@
         "replacements": [
           {
             "regex": "/\"Actual Reference Point\"/g",
-            "replacement": "\"Actual Reference Point (Gantt)\""
+            "replacement": "\"Actual Reference Point (Gantt)\"",
+            "disable": true
           }
         ]
       }
