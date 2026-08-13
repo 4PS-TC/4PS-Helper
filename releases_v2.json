@@ -23,8 +23,8 @@
         "files": ".al",
         "replacements": [
           {
-            "regex": "/Enum::\"SAL Document Type 2\"\\.FromInteger\\(GenericSalesLine\\.\"Document Type\"\\.AsInteger\\(\\)\\)/g",
-            "replacement": "GenericSalesLine.\"Document Type\""
+            "regex": "/Enum::\"SAL Document Type 2\"\\.FromInteger\\((TempGenericSales|GenericSales)(Header|Line)\\.\"Document Type\"\\.AsInteger\\(\\)\\)/g",
+            "replacement": "$1$2.\"Document Type\""
           }
         ]
       }
