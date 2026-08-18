@@ -27,6 +27,38 @@
             "replacement": "$1$2.\"Document Type\""
           }
         ]
+      },
+      {
+        "tc": "TC-????",
+        "name": "No overload for method 'EmailFile4PS' takes 13 arguments. Candidates: 'EmailFile4PS(InStream, Code[20], Text[250], Integer, Code[20], Code[10], Variant, Text[250], Text[150], Boolean, Integer)' defined in Codeunit 'Document Mailing' by the extension 4PS Construct NL by 4PS B.V. (28.1.260810.11), 'EmailFile4PS(Text[250], Code[20], Text[250], Integer, Code[20], Code[10], Variant, Text[250], Text[150], Boolean, Integer)' defined in Codeunit 'Document Mailing' by the extension 4PS Construct NL by 4PS B.V. (28.1.260810.11)",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "/Enum::\"SAL Document Type 2\"\\.FromInteger\\((TempGenericSales|GenericSales)(Header|Line)\\.\"Document Type\"\\.AsInteger\\(\\)\\)/g",
+            "replacement": "$1$2.\"Document Type\""
+          }
+        ]
+      },
+      {
+        "tc": "TC-????",
+        "name": "Codeunit 'File Storage Management' is missing",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "(Codeunit \"File Storage Management\")/g",
+            "replacement": "$1"
+          }
+        ],
+        "appDependencies": [
+          {
+            "id": "f5cba369-f5fc-4e82-8c9a-22fd88a902cd",
+            "name": "4PS External File Storage W1",
+            "publisher": "4PS B.V.",
+            "version": "1.0.0.0"
+          }
+        ]
       }
     ]
   },
