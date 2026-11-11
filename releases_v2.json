@@ -1,4 +1,22 @@
 {
+  "29.1": {
+    "versionMeta": {
+      "release": "29.1",
+      "major": "29",
+      "minor": "1",
+      "season": "0",
+      "platform": "29.0.0.0",
+      "application": "29.0.0.0",
+      "runtime": "18.0"
+    },
+    "dates": {
+      "releaseCandidate": "2026-12-25T00:00:00.000Z",
+      "generalAvailability": "2026-12-25T00:00:00.000Z",
+      "releaseDate": "2026-12-25T00:00:00.000Z"
+    },
+    "checkTcTicket": "TC-8049",
+    "fixes": []
+  },
   "28.1": {
     "versionMeta": {
       "release": "28.1",
