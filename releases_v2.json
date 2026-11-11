@@ -27,6 +27,18 @@
             "replacement": "$1$2.\"Document Type\""
           }
         ]
+      },
+      {
+        "tc": "TC-8050",
+        "name": "Extensions on report Order (405) need to be changed to Order 4PS (11330286)",
+        "type": "error",
+        "files": ".al",
+        "replacements": [
+          {
+            "regex": "/^(reportextension\\s+\\d+\\s+(?:\"[^\"]+\"|[A-Za-z_]\\w*)\\s+extends\\s+)Order\\b/gm",
+            "replacement": "$1\"Order 4PS\""
+          }
+        ]
       }
     ]
   },
